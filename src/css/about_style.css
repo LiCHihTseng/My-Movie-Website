@@ -1,0 +1,88 @@
+.about-container{
+    width: 75vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8,auto);
+
+}
+
+
+#about_item_1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    background-color: white;
+    width: 75%;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#about_item_2 {
+    grid-column-start: 4;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 9;
+}
+#about_item_3 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 5;
+    grid-row-end: 7;
+    background-color: white;
+    width: 75%;
+    border-radius: 10px;
+    margin-top: 5%;
+}
+#about_item_4 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 7;
+    grid-row-end: 9;
+}
+
+#current_temperature, #current_windspeed{
+    font-size: 2.5rem;
+    color: #379EA8;
+}
+
+img{
+    width : 75px;
+}
+#section-icon >img{
+    width: 50%;
+    height: auto;
+}
+#subscribe-form{
+    width: 90%;
+    padding: 5%;
+}
+
+#subscribe-form > label{
+    display: block;
+    font-size: 1em;
+    margin-bottom: 0.5em;
+}
+
+#subscribe-form > input{
+    display: block;
+    width: 80%;
+    margin-bottom: 1rem;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+}
+
+#subscribe-form > input:focus{
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgb(0, 123, .25);
+}

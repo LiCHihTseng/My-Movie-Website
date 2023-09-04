@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href = "css/general_styles.css">
+    <link rel="stylesheet" type="text/css" href = "css/gallery_style.css">
+    <link rel="stylesheet" type="text/css" href = "css/about_style.css">
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class = "grid-container">
+        <div class="brand">Food Market</div>
+        <div class = "page-links">
+            <a href="index.html"><button class="menu-button">Home</button></a>
+            <a href = "gallery.html"><button class = "menu-button">Gallery</button></a>
+            <a href = "about.html"><button class = "menu-button">About</button></a>
+            
+        </div><!--closes the page-links div-->
+        <div class = "main">
+            <h1>About Us</h1>
+            
+
+        </div> <!-- close the main div -->
+        
+    </div>
+
+    <div class="about-container">
+        <div id = "about_item_1">
+            <figure class ="section-icon">
+                <img src = "image/cloudy.png" alt="Weather icon with sun and clouds">
+            </figure>
+            <h4>Current Weather</h4>
+            <p>Temperature</p>
+            <p id="current_temperature">??</p>
+            <p>Wind Speed</p>
+            <p id="current_windspeed">??</p>
+        </div>
+        <div id = "about_item_2">
+            <h3>Organized by Family, Friends & Community</h3>
+            <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <h3>who we are</h3>
+            <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+            <h3>Our Mission</h3>
+            <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+        </div>
+        <div id = "about_item_3">
+            <form id = "subscribe-form">
+                <h5>Subscrible to our newsletters!</h5>
+                <label for = "firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+
+                <label for = "suburb">Suburb:</label>
+                <input type="text" id="suburb" name="suburb" placeholder="Enter your suburb" required>
+
+                <label for = "Email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+                <input type="submit" value="Subscrible">
+            </form>
+
+            <div id="responeMessage"></div>
+        </div>
+        <div id = "about_item_4">
+
+        </div>
+    </div>
+
+
+        <script src = "js/about_api.js"></script>
+    </body>
+</html>
