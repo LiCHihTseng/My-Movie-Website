@@ -1,0 +1,292 @@
+html,
+body {
+    background-color: #F2F4EF;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 80px 1fr;
+}
+/* Media query for screens with a maximum width of 768px (typical for mobile devices) */
+@media screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Change to a single column layout for mobile devices */
+        grid-template-rows: 80px auto 1fr; /* Adjust grid rows for mobile layout */
+    }
+
+    .brand {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .page-links {
+        grid-column: 1;
+        grid-row: 2;
+        text-align: center; /* Center align for mobile */
+    }
+
+    /* Adjust other styles for mobile layout as needed */
+}
+.brand {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+    background-color: #6D58BF;
+    /* new line – just copy and paste this line */
+    padding: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+}
+.page-links {
+    grid-column: 3 / span 2;
+    grid-row: 1/3;
+    text-align: right;
+    background-color: #6D58BF;
+    /* new line – just copy and paste this line */
+    padding: 10px;
+    padding-right: 20px;
+}
+.translateSelectLanguage {
+
+    top: 100px;
+    right: 100px;
+    background-color: #FF5733;
+    color:white;
+    width: 70px;
+    height:30px;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+.poster-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-rows: repeat(10, 80px);
+
+}
+
+
+#movie-img{
+    width: 100%;
+    height: 100%;
+    grid-column: 1/-1;
+    grid-row:1/8;
+
+}
+.poster-content{
+    grid-row: 8/-1;
+    grid-column: 3/5;
+}
+#small-movie-img{
+    width: 80%;
+    height: 100%;
+    grid-row: 6/11 ;
+    grid-column: 2;
+    z-index: 2 ;
+}
+#release-date{
+    color: #2C10A0; 
+    font-weight: bold;
+    margin-bottom: 0px;
+    font-size: 24px;
+}
+#movie-title{
+    margin-top:0px;
+    font-weight: bold;
+    font-size: 48px;
+    margin-bottom: 0px;
+}
+#category{
+    font-size: 20px;
+    font-weight: 600;
+}
+#ticket-price{
+    line-height: 30px;
+    font-size: 20px;
+}
+
+#buy-ticket{
+    grid-column: 6;
+    background-color: #FF5733;
+    border: none;
+    border-radius: 8px;
+    width: 150px;
+    height: 66px;
+    /* transform: scale(2.5); */
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bolder;
+    margin: 2em;
+    font-size: 16px;
+}
+
+/* Media query for screens with a maximum width of 768px (typical for mobile devices) */
+@media screen and (max-width: 768px) {
+    .poster-container {
+        grid-template-columns: 1fr; /* Change to a single column layout for mobile devices */
+        grid-template-rows: auto auto auto auto auto auto auto auto auto auto; /* Adjust grid rows for mobile layout */
+        grid-row-gap: repeat(10, 10px); /* Add some vertical spacing between rows */
+    }
+
+    #movie-img {
+        grid-column: 1;
+        grid-row: 1; /* Adjust the position of the movie image for mobile */
+    }
+
+    #small-movie-img {
+        grid-column: 1;
+        grid-row: 2; /* Adjust the position of the small movie image for mobile */
+    }
+
+    .poster-content {
+        grid-column: 1;
+        grid-row: 3; /* Adjust the position of the poster content for mobile */
+        text-align: center; /* Center align for mobile */
+    }
+
+    #buy-ticket {
+        grid-column: 1;
+        grid-row: 4; /* Adjust the position of the buy ticket button for mobile */
+        margin: 0 auto; /* Center align for mobile */
+    }  
+    #release-date{
+        font-size: 3px;
+    }
+
+    /* Adjust other styles for mobile layout as needed */
+}
+.description-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    margin: 20px auto;
+    padding:0 160px 0 20px;
+}
+.description-container .buttons{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+.description-container .buttons .font-size-btn{
+    padding: 0 10px;
+    display: inline-flex;
+    background: #ddd;
+    color: #fff;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.description-container .buttons .font-size-btn.active{
+    background: #444;
+    
+}
+.description-container .buttons .font-size-btn{
+    font-size: 2em;
+}
+
+.description-container .buttons .font-size-btn:nth-child(2){
+    font-size: 2.5em;
+}
+.description-container .buttons .font-size-btn:nth-child(3){
+    font-size: 3em;
+}
+.description-container .movie-description{
+    font-size: 1em;
+    color: #444;
+}
+
+.movie-description{
+    text-align: left;
+    margin: 5px;
+
+    z-index: 5;
+
+    left: 15rem;
+    top: 5rem;
+    max-width: 1120px; /* Set maximum width */
+    word-wrap: break-word; /* Allow long words to break into the next line */
+}
+
+.movie-description p {
+    /* font-size: 18px; Initial font size */
+    transition: font-size 0.3s ease; /* Add a transition effect */
+}
+
+#description-content{
+    padding-left:120px;
+    /* font-size: 18px; */
+    line-height: 40px;
+}
+#cast{
+    text-align: left;
+
+    word-wrap: break-word; /* Allow long words to break into the next line */
+}
+.cast-container {
+    /* Initial styles for larger screens */
+    margin-left: 8em;
+}
+
+#card-cast {
+    width: 500px;
+    height: 200px;
+}
+
+#cast-title {
+    color: #6D58BF;
+    font-size: 36px;
+}
+
+#cast-img {
+    transform: scale(0.8);
+    float: left;
+}
+
+#cast-name {
+    font-size: 36px;
+    padding-top: 34px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#character-name {
+    font-size: 30px;
+}
+
+#character-name {
+    color: #444;
+}
+
+.comment-container{
+    margin-left: 8em;
+}
+#content-title{
+    color: #6D58BF;
+    font-size: 36px;
+}
+.card-comment{
+    width: 80%;
+    height: 200px;
+    background-color: white;
+}
+.card-comment h2{
+    padding: 20px;
+    margin-bottom: 0px;
+}
+
+.card-comment p{
+    padding: 0px 20px 20px 20px;
+    margin-top: 0px;
+}

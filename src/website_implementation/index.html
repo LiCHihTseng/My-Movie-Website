@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;
+            0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,500;1,9..40,600&family=Roboto:ital,
+            wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <title>Language Selector</title>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="brand">Movie</div>
+        <div class="page-links">
+            <div id="translate">
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <section aria-label="Newest Photos">
+        <div class="carousel" data-carousel>
+            <button class="carousel-button prev" data-carousel-button="prev">
+                <img src="img/mingcute_left-line.png" alt="">
+            </button>
+            <button class="carousel-button next" data-carousel-button="next">
+                <img src="img/mingcute_right-line.png" alt="">
+            </button>
+            <div id="content">
+                <h1 id="heading">John Wick 3 : Parabellum</h1>
+                <p id="description">John Wick is on the run after killing a member of the international assassins'
+                    guild,
+                    and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</p>
+                <button class="slider_button">Watch trailer</button>
+            </div>
+
+            <ul data-slides>
+                <li class="slide" data-active>
+                    <img src="img/Poster.png" alt="Movie 1">
+                </li>
+                <li class="slide">
+                    <img src="img/Rectangle 2.png" alt="Movie 2">
+                </li>
+                <li class="slide">
+                    <img src="img/Rectangle 7.png" alt="Movie 3">
+                </li>
+            </ul>
+        </div>
+
+    </section>
+    <div class="content-title">
+        <div class="title">Playing Movies (Currently)</div>
+        <div class="content-links">
+            <a href="movie_list.html" style="font-size: 24px; color:#FF5733">see more
+                <img src="img/Chevron right.svg"></a>
+
+        </div>
+
+    </div>
+    <section class="card-container">
+        <div id="card-container"></div>
+
+    </section>
+
+
+
+
+
+</body>
+<script src="js/index.js"></script>
+<script src="https://res.zvo.cn/translate/translate.js"></script>
+<script>
+    translate.selectLanguageTag.show = true; //不出现的select的选择语言
+    translate.execute();
+</script>
+
+</html>
