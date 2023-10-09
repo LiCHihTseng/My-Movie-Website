@@ -26,7 +26,7 @@ if (movieIdentifier) {
                 document.getElementById("movie-img").src = movieDetails.image_url;
                 document.getElementById("small-movie-img").src = movieDetails.image_url;
 
-                
+
 
                 // Create an empty array to store cinema details
                 const cinemaDetails = [];
@@ -35,10 +35,10 @@ if (movieIdentifier) {
                     const cinemaDetail = `${cinema.cinema_name}: $${cinema.ticket_price}`;
                     cinemaDetails.push(cinemaDetail);
                 });
-                
+
                 // Set the text content of the element with id "ticket_price" to the cinema details
-                document.getElementById("ticket-price").innerHTML  = cinemaDetails.join("<br>");
-                
+                document.getElementById("ticket-price").innerHTML = cinemaDetails.join("<br>");
+
             } else {
                 // 处理电影不存在的情况
                 document.getElementById("movie-title").textContent = "Movie Not Found";
@@ -52,12 +52,28 @@ if (movieIdentifier) {
     document.getElementById("movie-title").textContent = "Movie Not Specified";
 }
 
+//increase movice description font size 
 let buttons = document.querySelector('.buttons');
 let btn = buttons.querySelectorAll('.font-size-btn');
-for (var i = 0; i <btn.length; i++){
-    btn[i].addEventListener('click', function(){
+for (var i = 0; i < btn.length; i++) {
+    btn[i].addEventListener('click', function () {
         let current = document.getElementsByClassName('active');
-        current[0].className = current[0].className.replace("active","");
+        current[0].className = current[0].className.replace("active", "");
         this.className += " active";
     })
 }
+
+// Select all elements with the "card-cast" class
+const cardCastElements = document.querySelectorAll('.card-cast');
+
+// Add a click event listener to each card-cast element
+cardCastElements.forEach((card) => {
+    card.addEventListener('click', () => {
+        // Extract the target page URL associated with the clicked card
+        const targetPage = card.getAttribute('data-cast-link');
+
+        // Navigate to the target page
+        window.location.href = targetPage;
+        console.log('123')
+    });
+});

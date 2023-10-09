@@ -239,9 +239,14 @@ body {
     margin-left: 8em;
 }
 
-#card-cast {
+.card-cast {
     width: 500px;
     height: 200px;
+    
+}
+.card-cast:hover{
+    outline: solid 2px #6D58BF;
+
 }
 
 #cast-title {
@@ -250,7 +255,7 @@ body {
 }
 
 #cast-img {
-    transform: scale(0.8);
+    transform: scale(0.5);
     float: left;
 }
 
@@ -277,8 +282,10 @@ body {
     font-size: 36px;
 }
 .card-comment{
+    display: flex;
+    flex-wrap: wrap;
     width: 80%;
-    height: 200px;
+    margin-bottom: 20px;
     background-color: white;
 }
 .card-comment h2{

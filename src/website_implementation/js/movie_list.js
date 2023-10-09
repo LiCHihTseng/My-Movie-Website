@@ -17,15 +17,15 @@ fetch(baseURL)
             // Set tabindex dynamically based on the index
             movieDetailsDiv.tabIndex = index + 1;
 
-            // 為卡片設定一個唯一的識別符號（例如，電影標題）
+            // Give the card a identifier (e.g. movie title)
             const cardIdentifier = movie.title;
 
-            // 新增一個點擊事件監聽器到卡片上
+            // add click event on card view
             movieDetailsDiv.addEventListener("click", () => {
-                // 根據識別符號構建新頁面的 URL，包含 `movie_description.html` 和識別符號
+                // Construct the URL of the new page based on the identifier, including `movie_description.html` and the identifier
                 const newPageURL = `movie_description.html?movie=${cardIdentifier}`;
 
-                // 程式方式導向到新頁面
+                // navigate to a new page
                 window.location.href = newPageURL;
             });
             // Create and set the movie title

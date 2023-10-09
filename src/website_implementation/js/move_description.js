@@ -61,3 +61,17 @@ for (var i = 0; i <btn.length; i++){
         this.className += " active";
     })
 }
+// Select all elements with the "card-cast" class
+const cardCastElements = document.querySelectorAll('.card-cast');
+
+// Add a click event listener to each card-cast element
+cardCastElements.forEach((card) => {
+    card.addEventListener('click', () => {
+        // Extract the target page URL associated with the clicked card
+        const targetPage = card.getAttribute('data-cast-link');
+
+        // Navigate to the target page
+        window.location.href = targetPage;
+        
+    });
+});

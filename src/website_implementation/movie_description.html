@@ -10,7 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;
             0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,500;1,9..40,600&family=Roboto:ital,
-            wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+            wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -35,14 +36,15 @@
             <p id="ticket-price">---</p>
         </div>
 
-        <button id="buy-ticket">
-            <img src="media/ticket.svg" style="transform: scale(0.7);">Buy ticket</button>
+        <button id="buy-ticket" >
+            <img src="media/ticket.svg" style="transform: scale(0.7);">Buy ticket
+        </button>
 
     </div>
     <div class="description-container">
         <div class="buttons">
-            <span class="font-size-btn active" onclick="document.getElementById('text').style.fontSize='20px'">A</span>
-            <span class="font-size-btn" onclick="document.getElementById('text').style.fontSize='1.5em'">A</span>
+            <span class="font-size-btn active" onclick="document.getElementById('text').style.fontSize='1.2em'">A</span>
+            <span class="font-size-btn" onclick="document.getElementById('text').style.fontSize='1.6em'">A</span>
             <span class="font-size-btn" onclick="document.getElementById('text').style.fontSize='2em'">A</span>
         </div>
         <div class="movie-description" id="text">
@@ -53,7 +55,8 @@
                 as opposed to using 'Content here, content here', making it look like readable English.
                 Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,
                 and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
-                Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour
+                Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected
+                humour
                 and the like).
             </p>
         </div>
@@ -63,9 +66,17 @@
         <div id="cast">
             <h2 id="content-title">Cast Information</h2>
         </div>
-        <div id="card-cast">
+        <div class="card-cast" data-cast-link="cast_information.html">
+
             <img src="media/Ellipse 1.png" id="cast-img">
             <p id="cast-name">Tom Brady</p>
+            <p id="character-name">Peter Parker</p>
+
+
+        </div>
+        <div class="card-cast" data-cast-link="cast_information.html">
+            <img src="media/Ellipse 1.png" id="cast-img">
+            <p id="cast-name">Andy Brady</p>
             <p id="character-name">Peter Parker</p>
         </div>
     </div>
