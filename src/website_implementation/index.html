@@ -42,7 +42,7 @@
                 <p id="description">John Wick is on the run after killing a member of the international assassins'
                     guild,
                     and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</p>
-                <button class="slider_button">Watch trailer</button>
+                <button class="slider_button">Watch information</button>
             </div>
 
             <ul data-slides>
@@ -75,7 +75,7 @@
 
 
     <footer>
-        
+
     </footer>
 
 
@@ -83,7 +83,8 @@
 <script src="js/index.js"></script>
 <script src="https://res.zvo.cn/translate/translate.js"></script>
 <script>
-    translate.selectLanguageTag.show = true; //不出现的select的选择语言
+    translate.selectLanguageTag.show = true; //Select language for select that does not appear
+    translate.ignore.class.push('brand'); //Ignore translating the brand class.
     translate.execute();
 </script>
 

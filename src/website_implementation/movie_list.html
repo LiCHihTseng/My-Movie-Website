@@ -12,12 +12,13 @@
             wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <title>Document</title>
+
 </head>
 
 <body>
     <div class="grid-container">
-        <div class="brand">Movie</div>
-        <div class="page-links">
+        <div class="brand col-lg-3">Movie</div>
+        <div class="page-links col-lg-3">
             <div id="translate">
             </div>
 
@@ -25,23 +26,43 @@
 
 
     </div>
-
+    <h2 id="title">Trending Movie</h2>
     <div class="content-container">
-        <h2 id="title">Trending Movie</h2>
+
         <div id="card-container">
-            
+
         </div>
+
         <div class="filter">
             <h2>Filter</h2>
+            <div class="filter_buttons">
+                <button class="button-value active" data-name="All">All</button>
+                <button class="button-value" data-name="Action">Action</button>
+                <button class="button-value" data-name="Romance">Romance</button>
+                <button class="button-value" data-name="Childrens">Childrens</button>
+                <button class="button-value" data-name="Drama">Sci-Fi</button>
+                <button class="button-value" data-name="Fantasy">Fantasy</button>
+                <p>Location</p>
+                <button class="button-value active" data-name="All">All</button>
+                <button class="button-value active" data-name="All">All</button>
+                <button class="button-value active" data-name="All">All</button>
+            </div>
+
         </div>
+
     </div>
 
 
+
+
 </body>
-<script src="js/movie_list.js"></script>
-<script src="https://res.zvo.cn/translate/translate.js"></script>
+
+<script src="js/movie_list.js" ></script>
+<script  src="js/translate.js"></script>
 <script>
-    translate.selectLanguageTag.show = true; //不出现的select的选择语言
+    translate.selectLanguageTag.show = true; //Select language for select that does not appear
+    translate.ignore.class.push('brand'); //Ignore translating the brand class.
+    translate.selectLanguageTag.languages = 'english,chinese_simplified,korean,arabic,japanese,italian,spanish';
     translate.execute();
 </script>
 

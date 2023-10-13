@@ -1,0 +1,419 @@
+html,
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: minmax(10vh, auto);
+}
+.brand {
+    grid-column: 1 / span 6;
+    grid-row: 1 ;
+    background-color: #6D58BF;
+    /* new line – just copy and paste this line */
+    padding: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.page-links {
+    grid-column: 7 / span 6;
+    grid-row: 1;
+    text-align: right;
+    background-color: #6D58BF;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.poster-container{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: minmax(10vh, auto);
+
+
+}
+.translateSelectLanguage {
+
+
+    background-color: #FF5733;
+    color:white;
+    width: 70px;
+    height:30px;
+    margin-top: 20px;
+    margin-right: 40px;
+    border-radius: 4px;
+}
+
+
+
+
+
+
+/* Media query for screens with a maximum width of 768px (typical for mobile devices) */
+@media only screen and (min-width: 601px )and (max-width: 1194px) {
+
+    
+
+    #small-movie-img{
+        width: 0% !important;
+
+    }
+    .poster-content{
+        grid-column: 2/9 !important;
+        grid-row: 9/12 !important;
+
+    }
+    #ticket-price{
+        font-size: 16px !important;
+        
+    }
+    #buy-ticket{
+        width: 120px !important;
+        height: 60px !important;
+        font-size: 10px !important;
+        grid-row: 10 !important;
+        grid-column: 10 !important;
+        margin: 0px !important;
+    }
+    #buy-ticket img{
+        transform: scale(0.5) !important;
+    }
+    #movie-img {
+
+        height: 50vw !important;
+    }
+    .movie-description{
+        margin:0px !important;
+        padding-right: 20px !important;
+    }
+    .movie-description p {
+        font-size: 1.2em !important;
+        
+    }
+    #cast{
+        margin: 12px !important;
+    }
+    #content-title {
+       
+        font-size: 30px !important;
+    }
+    
+
+}
+@media only screen and (max-width: 600px ){
+    .col-1 { grid-column: span 1;}
+    .col-2 { grid-column: span 2;}
+    .col-3 { grid-column: span 3;}
+    .col-4 { grid-column: span 4;}
+    .col-5 { grid-column: span 5;}
+    .col-6 { grid-column: span 6;}
+    .col-7 { grid-column: span 7;}
+    .col-8 { grid-column: span 8;}
+    .col-9 { grid-column: span 9;}
+    .col-10 { grid-column: span 10;}
+    .col-11 { grid-column: span 11;}
+    .col-12 { grid-column: span 12;}
+
+    .brand{
+        grid-column: 1 / span 6 !important; 
+    }
+
+    .page-links{
+        grid-column: 7/span 6;
+    }
+    #movie-img{
+        height: 50vw !important;
+        grid-column: 2/6 !important;
+        grid-row: 6/13 !important;
+    }
+    #small-movie-img{
+        width: 0% !important;
+
+    }
+    .poster-content{
+        grid-row: 6/12 !important;
+        grid-column: 7/11 !important;
+    }
+    
+    #release-date{
+        margin-top: 0px;
+        font-size: 16px !important;
+    }
+    #movie-title{
+        font-size: 30px !important;
+        margin-bottom: 0px;
+    }
+    #category{
+        font-size: 18px !important;
+        font-weight: 600;
+    }
+    #ticket-price{
+        font-size: 12px !important;
+        
+    }
+    #buy-ticket{
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 0px !important;
+        grid-column: 12 !important;
+        grid-row: 10 !important;
+        margin: 0px !important;
+    }
+    #buy-ticket img{
+        transform: scale(0.5) !important;
+    }
+
+
+    .description-btn .buttons .font-size-btn{
+        padding: 0 10px;
+        display: inline-flex;
+        background: #ddd;
+        color: #fff;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    
+    .description-btn .buttons .font-size-btn{
+        font-size: 1em !important;
+    }
+    
+    .description-btn .buttons .font-size-btn:nth-child(2){
+        font-size: 1.5em !important;
+    }
+    .description-btn .buttons .font-size-btn:nth-child(3){
+        font-size: 2em !important;
+    }
+    .movie-description{
+        margin:0px !important; 
+    }
+    .movie-description p {
+        font-size: 1em !important;
+        
+    }
+    #cast{
+        margin: 12px !important;
+    }
+    #content-title {
+       
+        font-size: 24px !important;
+    }
+
+}
+
+
+
+
+
+
+#movie-img{
+    background-image: url('../media/Rectangle\ 2.png');
+    background-size: cover;
+    width: 100%;
+    height: 30vw;
+    max-width: 100%;
+    grid-column: 1 /13;
+    grid-row: 1 / 8;
+}
+.poster-content{
+    grid-row: 8/12;
+    grid-column: 6/10;
+}
+#small-movie-img{
+    width: 100%;
+    height: 100%;
+    grid-row: 4/12 ;
+    grid-column: 2/5;
+    z-index: 2 ;
+}
+#release-date{
+    color: #2C10A0; 
+    font-weight: bold;
+    margin-bottom: 0px;
+    font-size: 24px;
+}
+#movie-title{
+    margin-top:0px;
+    font-weight: bold;
+    font-size: 48px;
+    margin-bottom: 0px;
+}
+#category{
+    font-size: 28px;
+    font-weight: 600;
+}
+#ticket-price{
+    line-height: 30px;
+    font-size: 20px;
+}
+
+#buy-ticket{
+    grid-column: 11;
+    background-color: #FF5733;
+    border: none;
+    border-radius: 8px;
+    width: 150px;
+    height: 66px;
+    /* transform: scale(2.5); */
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bolder;
+    margin: 2em;
+    font-size: 16px;
+}
+
+/* .description-container{
+    position: relative;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column;
+    margin: 20px auto;
+    padding:0 160px 0 20px; 
+}  */
+.description-btn{
+    margin-right: 180px;
+}
+.description-btn .buttons{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+.description-btn .buttons .font-size-btn{
+    padding: 0 10px;
+    display: inline-flex;
+    background: #ddd;
+    color: #fff;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.description-btn .buttons .font-size-btn.active{
+    background: #444;
+    
+}
+.description-btn .buttons .font-size-btn{
+    font-size: 2em;
+}
+
+.description-btn .buttons .font-size-btn:nth-child(2){
+    font-size: 2.5em;
+}
+.description-btn .buttons .font-size-btn:nth-child(3){
+    font-size: 3em;
+}
+.description-btn .movie-description{
+    font-size: 1em;
+    color: #444;
+}
+
+.movie-description{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding:0 0 0 20px;
+    text-align: left;
+    margin: 5px 0 0 120px;
+    
+    max-width: 1200px; /* Set maximum width */
+    min-width: 200px;
+    word-wrap: break-word; /* Allow long words to break into the next line */
+}
+
+.movie-description p {
+    font-size: 2em;
+    transition: font-size 0.3s ease; /* Add a transition effect */
+    line-height: 1.8;
+    text-align: justify;
+}
+
+
+#cast{
+    text-align: left;
+    margin-left: 8em;
+    word-wrap: break-word; /* Allow long words to break into the next line */
+}
+.cast-container {
+    /* Initial styles for larger screens */
+    margin-left: 8em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-cast {
+    width: 500px;
+    height: 200px;
+    margin: 0px 10% 0px 5%;
+}
+.card-cast:hover{
+    outline: solid 2px #6D58BF;
+
+}
+
+#cast-title {
+    color: #6D58BF;
+    font-size: 36px;
+}
+
+#cast-img {
+    transform: scale(0.5);
+    float: left;
+}
+
+#cast-name {
+    font-size: 36px;
+    padding-top: 34px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#character-name {
+    font-size: 30px;
+}
+
+#character-name {
+    color: #444;
+}
+
+.comment-container{
+    margin-left: 8em;
+}
+#content-title{
+    color: #6D58BF;
+    font-size: 36px;
+}
+.title-container{
+    color:#6D58BF;
+    display:flex;
+    justify-content: space-between;
+}
+.card-comment{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin-bottom: 20px;
+    background-color: white;
+    outline: 2px solid #646464;
+}
+.card-comment h2{
+    padding: 20px;
+    margin-bottom: 0px;
+}
+
+.card-comment p{
+    padding: 0px 20px 20px 20px;
+    margin-top: 0px;
+}

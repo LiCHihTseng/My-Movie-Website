@@ -1,3 +1,4 @@
+// import * as translate from "./translate.js";
 // API base URL
 const baseURL = "https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/movies/";
 
@@ -34,9 +35,9 @@ fetch(baseURL)
             title.textContent = movie.title;
 
             // Create and set the movie release date
-            const releaseDate = document.createElement("p");
-            releaseDate.setAttribute('id','release-date');
-            releaseDate.textContent = `2023`;
+            const movieRate = document.createElement("p");
+            movieRate.setAttribute('id', 'movie-rate');
+            movieRate.textContent = `8.0`;
 
             // Create and set the movie category
             const category = document.createElement("p");
@@ -62,7 +63,7 @@ fetch(baseURL)
             // Append all elements to the movie details div
 
             movieDetailsDiv.appendChild(posterImage); // Append the image
-            movieDetailsDiv.appendChild(releaseDate);
+            movieDetailsDiv.appendChild(movieRate);
             movieDetailsDiv.appendChild(title);
 
             movieDetailsDiv.appendChild(category);
@@ -71,10 +72,42 @@ fetch(baseURL)
             // Append the movie details div to the container
             container.appendChild(movieDetailsDiv);
         });
+        const filterButtons = document.querySelectorAll(".button-value");
+        const filterableCards = document.querySelectorAll("#card-container .card");
+
+        const filterCards = (e) => {
+            document.querySelector(".active").classList.remove("active");
+            e.target.classList.add("active");
+            const selectedCategory = e.target.dataset.name.toLowerCase();
+
+            // Iterate over the cards and apply or remove the hide class
+            filterableCards.forEach(card => {
+                const cardCategory = card.querySelector("#category").textContent.toLowerCase();
+                
+                if (selectedCategory === "all" || cardCategory.includes(selectedCategory)) {
+                    card.classList.remove("hide"); // Show the card
+                } else {
+                    card.classList.add("hide"); // Hide the card
+                }
+            });
+        };
+
+        // Add click event listener to each filter button
+        filterButtons.forEach(button => button.addEventListener("click", filterCards));
+
+        translate.selectLanguageTag.show = true;
+        translate.ignore.class.push('brand');
+        translate.execute();
     })
     .catch(error => {
         console.error("Error fetching movie data:", error);
     });
 
 // Call the function to fetch and display movie details
-fetchMovieDetails();
+// fetchMovieDetails();
+
+
+// Define a variable to store the currently selected category
+
+
+
