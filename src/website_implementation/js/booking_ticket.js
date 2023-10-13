@@ -1,19 +1,23 @@
 let seats = document.querySelector(".all-seats");
 
 for (var i = 0; i < 59; i++) {
-    let randint = Math.floor(Math.random() * 2)
-    let booked = randint === 1 ? "booked" : "";
-    seats.insertAdjacentHTML(
-        "beforeend",
-        '<input type="checkbox" name="tickets" id="s' +
-        (i + 2) +
-        '" /><label for="s' +
-        (i + 2) +
-        '" class="seat ' +
-        booked +
-        '"></label>'
+    let randint = Math.floor(Math.random() * 2);
 
-    );
+    // Create the checkbox and label
+    let checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.name = "tickets";
+    checkbox.id = "s" + (i + 2);
+
+    // Disable the checkbox for booked seats
+    checkbox.disabled = randint === 1;
+
+    let label = document.createElement("label");
+    label.htmlFor = "s" + (i + 2);
+    label.className = "seat " + (randint === 1 ? "booked" : "");
+
+    seats.appendChild(checkbox);
+    seats.appendChild(label);
 }
 
 let tickets = seats.querySelectorAll("input")
@@ -38,16 +42,16 @@ tickets.forEach((ticket) => {
 
 const baseURL = "https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/movies/";
 
-// 从URL参数中获取电影标识符
+// Get movie identifier from URL parameter
 const urlParams = new URLSearchParams(window.location.search);
 const movieIdentifier = urlParams.get("movie");
 
-// 如果有电影标识符，则调用API以获取该电影的详细信息
+// If there is a movie identifier, call the API to get the details of that movie
 if (movieIdentifier) {
-    // 构建电影详细信息的URL，例如：
+    // Build a URL with movie details
     const movieDetailURL = `${baseURL}?title=${movieIdentifier}`;
 
-    // 发起API请求以获取电影详细信息
+    // request API data
     fetch(movieDetailURL)
         .then(response => response.json())
         .then(data => {
@@ -64,7 +68,7 @@ if (movieIdentifier) {
 
 
 
-                // Create an empty array to store cinema details
+                // Create an array to store cinema details
                 const cinemaDetails = [];
                 movieDetails.cinema_details.forEach(cinema => {
                     const cinemaDetail = `${cinema.cinema_name}: $${cinema.ticket_price}`;
@@ -75,22 +79,43 @@ if (movieIdentifier) {
                     cinemaNameDiv.classList.add("cinema-name");
                     cinemaNameDiv.textContent = `${cinema.cinema_name}`;
 
+                    // Create a new div for each cinema session time
                     const cinemaTimeDiv = document.createElement("label");
-        
                     cinemaTimeDiv.classList.add("cinema-time");
-                    cinemaTimeDiv.textContent = `${cinema.session_time}`
+                    cinemaTimeDiv.textContent = `${cinema.session_time}`;
 
                     // Append the newly created div to the parent element with class "head"
                     document.querySelector(".head").appendChild(cinemaNameDiv);
                     document.querySelector(".times").appendChild(cinemaTimeDiv);
+
+                    // Add a click event listener to the cinema name
+                    cinemaNameDiv.addEventListener("click", () => {
+                        // Get the index of the clicked cinema
+                        const index = cinemaDetails.findIndex(detail => detail.startsWith(cinema.cinema_name));
+                        if (index !== -1) {
+                            // Extract the price from the cinema details
+                            const price = cinemaDetails[index].split(": ")[1];
+
+                            // Update the price element with the selected cinema's price
+                            document.getElementById("choose-price").textContent = `${cinema.cinema_name}: ${price}`;
+                        }
+
+                        // Remove the "selected-cinema" class from all "cinema-name" elements
+                        document.querySelectorAll(".cinema-name").forEach(div => {
+                            div.classList.remove("selected-cinema");
+                        });
+
+                        // Add the "selected-cinema" class to the clicked "cinema-name" element
+                        cinemaNameDiv.classList.add("selected-cinema");
+                    });
                 });
 
-                // Set the text content of the element with id "ticket_price" to the cinema details
+                // Set the text content of the element with id "ticket-price" to the cinema details
                 document.getElementById("ticket-price").innerHTML = cinemaDetails.join("<br>");
 
-                
+
             } else {
-                // 处理电影不存在的情况
+                //show movie not found if movie-title can not found the data
                 document.getElementById("movie-title").textContent = "Movie Not Found";
             }
 
@@ -99,7 +124,7 @@ if (movieIdentifier) {
             console.error("Error fetching movie details:", error);
         });
 } else {
-    // 如果没有电影标识符，可能显示错误消息或默认内容
+    // show movie not found if movie-title can not found the data
     document.getElementById("movie-title").textContent = "Movie Not Specified";
 }
 

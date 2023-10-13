@@ -275,3 +275,8 @@ input{
     border: none;
     cursor: pointer;
 }
+
+
+.selected-cinema {
+    border: 2px solid red; 
+}
