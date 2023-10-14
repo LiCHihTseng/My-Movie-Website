@@ -73,9 +73,11 @@ if (movieIdentifier) {
                 // Create an array to store cinema details
                 const cinemaDetails = [];
                 movieDetails.cinema_details.forEach(cinema => {
-                    const cinemaDetail = `${cinema.cinema_name}: $${cinema.ticket_price}: ${cinema.session_time}`;
+                    const cinemaDetail = `${cinema.cinema_name}: $${cinema.ticket_price}`;
                     cinemaDetails.push(cinemaDetail);
 
+                    selectedPrice = movieDetails.cinema_details[0].ticket_price;
+                    
                     // Create a new div for each cinema name
                     const cinemaNameDiv = document.createElement("div");
                     cinemaNameDiv.classList.add("cinema-name");
@@ -90,16 +92,15 @@ if (movieIdentifier) {
                         // Get the index of the clicked cinema
                         const index = cinemaDetails.findIndex(detail => detail.startsWith(cinema.cinema_name));
                         if (index !== -1) {
-                            // Extract price and session time
-                            const parts = cinemaDetails[index].split(": ");
-                            const priceString = parts[1]; // Price as a string (e.g., "$11.50")
+                            // Access the session time directly from the cinema object
+                            const selectedCinemaObject = movieDetails.cinema_details[index];
+                            const selectedPrice = selectedCinemaObject.ticket_price;
 
-                            // Convert the price string to a number by removing the "$" and parsing it as a float
-                            selectedPrice = parseFloat(priceString.replace("$", ""));
-                            const sessionTime = parts[2];
+                            const sessionTime = selectedCinemaObject.session_time || "Not available"; // Use "Not available" if session_time is not defined
                             const countElement = document.querySelector('.count'); // Select the element with the class '.count'
                             const count = countElement.innerHTML; // Get the content of the element
-
+                            
+                        
                             // Calculate the total price based on the count of tickets
                             const totalPrice = selectedPrice * count;
 
