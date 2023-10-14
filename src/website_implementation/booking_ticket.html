@@ -37,6 +37,11 @@
 
             <p id="category"></p>
             <p id="ticket-price">---</p>
+            <p id="movie-description">Explore the depths of human emotion and adventure with our latest cinematic
+                masterpiece. Immerse yourself in a world of suspense, romance, and action.</p>
+            <p id="movie-description">Witness the triumph of the human spirit as characters face overwhelming challenges
+                and emerge as heroes. This film is a journey of love, courage, and self-discovery, suitable for all
+                ages. Get ready for a roller-coaster of emotions and an unforgettable cinematic experience.</p>
         </div>
 
     </div>
@@ -44,6 +49,9 @@
         <div class="tickets">
             <div class="ticket-selector">
                 <div class="head">
+
+                </div>
+                <div class="times">
 
                 </div>
                 <div class="seats">
@@ -57,55 +65,19 @@
                         <label for="s1" class="seat booked"></label>
                     </div>
                 </div>
-                <div class="timings">
-                    <div class="dates">
-                        <input type="radio" name="date" id="d1" checked />
-                        <label for="d1" class="dates-item" tabindex="d1">
-                            <div class="day">Sun</div>
-                            <div class="date">11</div>
-                        </label>
-                        <input type="radio" name="date" id="d2" checked />
-                        <label for="d2" class="dates-item" tabindex="d2">
-                            <div class="day">Mon</div>
-                            <div class="date">12</div>
-                        </label>
-                        <input type="radio" name="date" id="d3" checked />
-                        <label for="d3" class="dates-item" tabindex="d3">
-                            <div class="day">Tue</div>
-                            <div class="date">13</div>
-                        </label>
-                        <input type="radio" name="date" id="d4" checked />
-                        <label for="d4" class="dates-item" tabindex="d4">
-                            <div class="day">Wed</div>
-                            <div class="date">14</div>
-                        </label>
-                        <input type="radio" name="date" id="d5" checked />
-                        <label for="d5" class="dates-item" tabindex="d5">
-                            <div class="day">Thu</div>
-                            <div class="date">15</div>
-                        </label>
-                        <input type="radio" name="date" id="d6" checked />
-                        <label for="d6" class="dates-item" tabindex="d6">
-                            <div class="day">Sat</div>
-                            <div class="date">17</div>
-                        </label>
 
-                    </div>
-                    <div class="times">
-                        <input type="radio" name="time" id="t1" checked />
-                        <label for="t1" class="time">11:00</label>
-                    </div>
-                </div>
+                <input type="date">
+
             </div>
             <div class="price">
                 <div class="total">
                     <span>
                         <span class="count">0</span> Tickets
                     </span>
-                    <div class="amount">0</div>
                 </div>
                 <button type="button">Book</button>
             </div>
+            <div id="choose-cinema">---</div>
             <div id="choose-price">---</div>
         </div>
     </div>
@@ -121,13 +93,13 @@
     translate.execute();
 
     window.onload = function () {
-    translate.selectLanguageTag.show = true; 
-    translate.ignore.class.push('brand'); 
-    translate.selectLanguageTag.languages = 'english,chinese_simplified,korean,arabic,japanese,italian,spanish';
-    translate.execute();
+        translate.selectLanguageTag.show = true;
+        translate.ignore.class.push('brand');
+        translate.selectLanguageTag.languages = 'english,chinese_simplified,korean,arabic,japanese,italian,spanish';
+        translate.execute();
 
 
-};
+    };
 
 </script>
 <script src="js/booking_ticket.js"></script>
