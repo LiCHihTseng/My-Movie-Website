@@ -226,6 +226,7 @@ body {
 .poster-content{
     grid-row: 8/12;
     grid-column: 6/10;
+    margin-top: 20px;
 }
 #small-movie-img{
     width: 100%;

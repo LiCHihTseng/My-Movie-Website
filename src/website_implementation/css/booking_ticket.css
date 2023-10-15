@@ -58,6 +58,7 @@ body {
 .poster-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));;
+    margin-top: 20px;
 }
 #movie-img{
     background-size: contain;
@@ -68,6 +69,26 @@ body {
 #movie-description{
     margin-right: 120px;
     text-align: justify;
+}
+#release-date{
+    color: #2C10A0; 
+    font-weight: bold;
+    margin-bottom: 0px;
+    font-size: 24px;
+}
+#movie-title{
+    margin-top:0px;
+    font-weight: bold;
+    font-size: 48px;
+    margin-bottom: 0px;
+}
+#category{
+    font-size: 28px;
+    font-weight: 600;
+}
+#ticket-price{
+    line-height: 30px;
+    font-size: 20px;
 }
 
 .center{
