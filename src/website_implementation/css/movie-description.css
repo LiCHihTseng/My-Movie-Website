@@ -47,7 +47,7 @@ body {
     background-color: #FF5733;
     color:white;
     width: 70px;
-    height:30px;
+    height:45px;
     margin-top: 20px;
     margin-right: 40px;
     border-radius: 4px;
@@ -362,6 +362,9 @@ body {
 .card-cast:hover{
     outline: solid 2px #6D58BF;
 
+}
+#add-comment{
+    margin-right: 160px;
 }
 
 #cast-title {

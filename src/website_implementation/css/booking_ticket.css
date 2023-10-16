@@ -46,6 +46,9 @@ body {
     /* new line – just copy and paste this line */
     padding: 10px;
     padding-right: 6vw;
+    display: flex;
+    align-items: center;
+    justify-content: end;
 }
 .translateSelectLanguage {
 
@@ -54,7 +57,7 @@ body {
     background-color: #FF5733;
     color:white;
     width: 70px;
-    height:30px;
+    height:45px;
     margin-top: 15px;
     border-radius: 4px;
 }
