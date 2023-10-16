@@ -86,3 +86,18 @@ cardCastElements.forEach((card) => {
 
     });
 });
+
+var formDiv = document.getElementById('form-comment');
+var display = 0;
+
+function hideShow(){
+    if(display == 1){
+        formDiv.style.display = 'block';
+        display = 0;
+
+    }
+    else{
+        formDiv.style.display = 'none';
+        display = 1;
+    }
+}

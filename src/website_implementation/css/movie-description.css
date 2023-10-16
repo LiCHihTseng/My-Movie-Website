@@ -360,7 +360,7 @@ body {
     display: flex;
 }
 .card-cast:hover{
-    outline: solid 2px #6D58BF;
+    outline: solid 3px #6D58BF;
 
 }
 #add-comment{
@@ -410,6 +410,7 @@ body {
     color:#6D58BF;
     display:flex;
     justify-content: space-between;
+    align-items: center;
 }
 .card-comment{
     display: flex;
@@ -418,6 +419,7 @@ body {
     margin-bottom: 20px;
     background-color: white;
     outline: 2px solid #646464;
+   
 }
 .card-comment h2{
     padding: 20px;
@@ -427,4 +429,31 @@ body {
 .card-comment p{
     padding: 0px 20px 20px 20px;
     margin-top: 0px;
+    font-size: 16px;
+
+}
+.form-comment{
+    display: none;
+}
+
+
+.add-comment{
+    position: relative;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.add-comment:after{
+    content: "";
+    position: absolute;
+    background-color: #6D58BF;
+    height: 3px;
+    width:0;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+    border-radius: 99px;
+}
+.add-comment:hover:after{
+    width: 100%;
 }
