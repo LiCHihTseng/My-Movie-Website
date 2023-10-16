@@ -26,14 +26,17 @@ body {
     grid-template-rows: minmax(10vh, auto);
 }
 .brand {
-    /* grid-column: 1 / span 6; */
+    display: flex;
+    align-items: center;
     grid-row: 1 / span 2;
     background-color: #6D58BF;
-    /* new line – just copy and paste this line */
     padding: 15px;
     font-size: 40px;
     font-weight: bold;
     color: white;
+
+    font-family: 'Pacifico', cursive;
+
 }
 .page-links {
     grid-column: 7 / span 6;
@@ -90,7 +93,7 @@ body {
     line-height: 30px;
     font-size: 20px;
 }
-
+/* set buy ticket element */
 .center{
     width: 100%;
     height: 100%;
@@ -235,19 +238,7 @@ input{
     align-items:center;
     justify-content: space-between;
 }
-/* .dates-item{
-    width: 50px;
-    height: 40px;
-    background: #fff;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 10px 0;
-    border-radius: 2mm;
-    cursor: pointer;
-} */
+
 .day{
     font-size: 12px;
 
@@ -319,3 +310,12 @@ input{
     color: white;
     background-color: #6D58BF;
 }
+
+#choose-cinema{
+    margin-left: 20px;
+}
+#choose-price{
+    margin-left: 20px;
+}
+
+/*-------------------------------------------------------------*/

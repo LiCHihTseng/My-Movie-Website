@@ -226,7 +226,7 @@ body {
 .poster-content{
     grid-row: 8/12;
     grid-column: 6/10;
-    margin-top: 20px;
+    
 }
 #small-movie-img{
     width: 100%;
@@ -345,19 +345,19 @@ body {
 #cast{
     text-align: left;
     margin-left: 8em;
-    word-wrap: break-word; /* Allow long words to break into the next line */
 }
 .cast-container {
-    /* Initial styles for larger screens */
-    margin-left: 8em;
+    
     display: flex;
     flex-wrap: wrap;
+    gap: 2em;
 }
 
 .card-cast {
     width: 500px;
     height: 200px;
     margin: 0px 10% 0px 5%;
+    display: flex;
 }
 .card-cast:hover{
     outline: solid 2px #6D58BF;
@@ -369,9 +369,15 @@ body {
     font-size: 36px;
 }
 
-#cast-img {
-    transform: scale(0.5);
+.cast-img {
+    background-image: url(../media/Cast_img.png);
+    height: 100%;
+    width: 200px;
     float: left;
+    border-radius: 157.5px;
+}
+.cast-info{
+    margin-left: 3em;
 }
 
 #cast-name {
