@@ -412,30 +412,6 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-.card-comment{
-    display: flex;
-    flex-wrap: wrap;
-    width: 80%;
-    margin-bottom: 20px;
-    background-color: white;
-    outline: 2px solid #646464;
-   
-}
-.card-comment h2{
-    padding: 20px;
-    margin-bottom: 0px;
-}
-
-.card-comment p{
-    padding: 0px 20px 20px 20px;
-    margin-top: 0px;
-    font-size: 16px;
-
-}
-.form-comment{
-    display: none;
-}
-
 
 .add-comment{
     position: relative;
@@ -456,4 +432,124 @@ body {
 }
 .add-comment:hover:after{
     width: 100%;
+}
+
+.form-comment{
+    display: none;
+    flex-wrap: wrap;
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.form-comment input{
+    width: 80%;
+    height: 50px;
+    padding: 0 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 2px solid #6D58BF;
+    
+}
+.stars{
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    margin: 5%;
+    margin-left: 0;
+    margin-bottom: 10px;
+}
+.stars i{
+    color: #e6e6e6;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.stars i.active{
+    color: #FF5733;
+}
+.form-comment input:focus{
+    border: 2px solid #2C10A0;
+    outline: 0;
+}
+
+.form-comment textarea{
+    width: 80%;
+    height: 150px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 2px solid #6D58BF;
+}
+
+.form-comment textarea:focus{
+    border: 2px solid #2C10A0;
+    outline: 0;
+    
+}
+
+.form-comment button{
+    border: 0;
+    padding: 10px 30px;
+    background: #6D58BF;
+    font-size: 18px;
+    border-radius: 5px;
+    color: #fff;
+}
+/*error message*/
+#error-title{
+    color: #FF0000;
+    font-weight: 600;
+}
+#error-star{
+    color: #FF0000;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+#error-comment{
+    color: #FF0000;
+    font-weight: 600;
+}
+
+
+
+.card-comment{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin-bottom: 20px;
+    background-color: #fff;
+    outline: 2px solid #646464;
+    box-shadow: 0px 2px 4px rgb(0,0,0,0.5);
+}
+.card-comment h2{
+    padding: 20px;
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+.card-comment p{
+    padding: 0px 20px 20px 20px;
+    margin-top: 0px;
+    font-size: 16px;
+
+}
+
+.card-content{
+    width: 80%;
+
+}
+
+.card-rate{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-rate i{
+    font-size: 24px;
+    color: #FF5733;
+}
+.card-rate h1{
+    color: #FF5733;
+    margin-left: 5px;
 }

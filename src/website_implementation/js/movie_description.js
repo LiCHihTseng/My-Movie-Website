@@ -1,6 +1,20 @@
-// translate.selectLanguageTag.show = true; //不出现的select的选择语言
-// translate.execute();
+// Get form-comment element 
+var formDiv = document.getElementById('form-comment');
+var display = 0;
 
+// Get references to form elements and the comment container
+const commentForm = document.getElementById('comment-form');
+const commentTitleInput = document.getElementById('comment-title');
+const commentTextInput = document.getElementById('comment-text');
+const commentContainer = document.getElementById('comment-container');
+const errorTitle = document.getElementById('error-title');
+const errorComment = document.getElementById('error-comment');
+const errorStar = document.getElementById('error-star');
+//get star icon elements
+const stars = document.querySelectorAll(".stars i");
+
+// Declare selectedRating
+let selectedRating = null;
 
 const baseURL = "https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/movies/";
 
@@ -18,7 +32,7 @@ if (movieIdentifier) {
         .then(response => response.json())
         .then(data => {
             const moviebutton = document.getElementById("buy-ticket");
-  
+
 
             // add click event on card view
             moviebutton.addEventListener("click", () => {
@@ -51,7 +65,7 @@ if (movieIdentifier) {
                 document.getElementById("ticket-price").innerHTML = cinemaDetails.join("<br>");
 
             } else {
-                // 处理电影不存在的情况
+
                 document.getElementById("movie-title").textContent = "Movie Not Found";
             }
         })
@@ -59,7 +73,7 @@ if (movieIdentifier) {
             console.error("Error fetching movie details:", error);
         });
 } else {
-    // 如果没有电影标识符，可能显示错误消息或默认内容
+
     document.getElementById("movie-title").textContent = "Movie Not Specified";
 }
 
@@ -87,17 +101,124 @@ cardCastElements.forEach((card) => {
     });
 });
 
-var formDiv = document.getElementById('form-comment');
-var display = 0;
 
-function hideShow(){
-    if(display == 1){
-        formDiv.style.display = 'block';
+//if click the +comment element show the form
+function hideShow() {
+    if (display == 1) {
+        formDiv.style.display = 'flex';
         display = 0;
 
     }
-    else{
+    else {
         formDiv.style.display = 'none';
         display = 1;
     }
 }
+
+stars.forEach((star, index1) => {
+
+    star.addEventListener("click", () => {
+        selectedRating = index1 + 1;
+
+        stars.forEach((star, index2) => {
+            index1 >= index2 ? star.classList.add("active") :
+                star.classList.remove("active");
+        })
+    })
+})
+// Handle form submission
+//I using chatGPT to understand how to  prevent appending a comment card when there are validation errors
+//comes from chatGPT https://chat.openai.com/share/4d242577-1f10-4ec3-b9b3-07599ebb60eb
+commentForm.addEventListener('submit', function (event) {
+
+    event.preventDefault(); // Prevent the default form submission behavior
+    let titleMessage = []
+    let starMessage = []
+    let message = []
+    if (commentTitleInput.value === '' || commentTitleInput.value == null) {
+        titleMessage.push('Title is required')
+    }
+    if (selectedRating === null) {
+        starMessage.push('Rate is required')
+    }
+    if (commentTextInput.value === '' || commentTextInput.value == null) {
+        message.push('Content is required')
+    }
+
+
+    if (titleMessage.length > 0) {
+        errorTitle.innerText = titleMessage.join(', ');
+        commentTitleInput.style.border='2px solid #FF0000';
+    } else {
+        errorTitle.innerText = '';
+        commentTitleInput.style.border = ''; //reset the border
+        
+    }
+    if (starMessage.length > 0) {
+        errorStar.innerText = starMessage.join(', ');
+
+    } else {
+        errorStar.innerText = '';
+        
+    }
+    if (message.length > 0) {
+        errorComment.innerText = message.join(', ')
+        commentTextInput.style.border = '2px solid #FF0000';
+
+    } else {
+        errorComment.innerText = '';
+        commentTextInput.style.border = '';
+        
+    }
+    // Get the input values
+    const title = commentTitleInput.value;
+    const text = commentTextInput.value;
+
+    // Create a new comment card
+    const commentCard = document.createElement('div');
+    commentCard.classList.add('card-comment');
+
+    const commentContent = document.createElement('div');
+    commentContent.classList.add('card-content')
+
+
+
+    // Create the title and text elements for the new comment
+    const commentTitle = document.createElement('h2');
+    commentTitle.textContent = title;
+    const commentText = document.createElement('p');
+    commentText.textContent = text;
+
+    // Create a new div for the rating
+    const commentRating = document.createElement('div');
+    commentRating.classList.add('card-rate');
+
+    const starIcon = document.createElement('i');
+    starIcon.classList.add('fa-solid', 'fa-star');
+
+    const cardRateNum = document.createElement('h1')
+    cardRateNum.textContent = selectedRating
+    commentRating.appendChild(starIcon);
+    commentRating.appendChild(cardRateNum);
+
+    // Append the title, text, and rating elements to the comment card
+    commentContent.appendChild(commentTitle);
+    commentContent.appendChild(commentText);
+
+
+
+
+    commentCard.appendChild(commentContent);
+    commentCard.appendChild(commentRating);
+
+    // Append the new comment card to the comment container
+    commentContainer.appendChild(commentCard);
+
+    // Clear the input fields and reset the selected rating
+    commentTitleInput.value = '';
+    commentTextInput.value = '';
+    selectedRating = null;
+});
+
+
+
