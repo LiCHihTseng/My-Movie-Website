@@ -40,6 +40,10 @@ body {
     font-family: 'Pacifico', cursive;
 
 }
+.brand a{
+    color: #fff;
+    text-decoration:none
+}
 
 .searchbox{
     grid-row: 1 / span2;
@@ -160,17 +164,17 @@ body {
 
 
 /*increase font size button*/
-.description-btn{
+.cast-description-btn{
     margin-right: 180px;
 }
-.description-btn .buttons{
+.cast-description-btn .buttons{
     width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     margin-bottom: 20px;
 }
-.description-btn .buttons .font-size-btn{
+.cast-description-btn .buttons .font-size-btn{
     padding: 0 10px;
     display: inline-flex;
     background: #ddd;
@@ -179,21 +183,21 @@ body {
     cursor: pointer;
 }
 
-.description-btn .buttons .font-size-btn.active{
+.cast-description-btn .buttons .font-size-btn.active{
     background: #444;
     
 }
-.description-btn .buttons .font-size-btn{
+.cast-description-btn .buttons .font-size-btn{
     font-size: 2em;
 }
 
-.description-btn .buttons .font-size-btn:nth-child(2){
+.cast-description-btn .buttons .font-size-btn:nth-child(2){
     font-size: 2.5em;
 }
-.description-btn .buttons .font-size-btn:nth-child(3){
+.cast-description-btn .buttons .font-size-btn:nth-child(3){
     font-size: 3em;
 }
-.description-btn .movie-description{
+.cast-description-btn .movie-description{
     font-size: 1em;
     color: #444;
 }

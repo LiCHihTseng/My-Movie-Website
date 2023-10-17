@@ -19,16 +19,27 @@
 </head>
 
 <body>
-    <div class="grid-container">
-        <div class="brand col-6">Movie</div>
-        <div class="page-links" id="translate">
-            <!-- <div id="translate"></div> -->
-
-
+    <nav>
+        <div class="grid-container">
+            <div class="brand">
+                <a a href="index.html">Movie</a>
+            </div>
+            <div class="searchbox col-lg-5">
+                <form class="search_element">
+                    <input type="text" placeholder="Search a movie">
+                    <button class="search_btn" type="submit" id="searchButton">Search<img src="media/search.svg">
+                    </button>
+                </form>
+            </div>
+            <div class="page-links">
+                <div id="translate">
+                </div>
+    
+            </div>
+    
+    
         </div>
-
-
-    </div>
+    </nav>
 
     <div class="poster-container">
         <div id="movie-img"></div>
@@ -48,6 +59,7 @@
 
     </div>
 
+    <!--Click Button to Change Font-size reference from https://www.youtube.com/watch?v=xOy0kVlbhlc&pp=ygUZaW5jcmVhc2UgZm9udCBzaXplIGJ1dHRvbg%3D%3D-->
     <div class="description-btn">
         <div class="buttons">
             <span class="font-size-btn active" tabindex="1" onclick="document.getElementById('text').style.fontSize='1em'" 
@@ -59,6 +71,7 @@
         </div>
 
     </div>
+
     <div class="movie-description" id="text">
 
         <p>
