@@ -103,11 +103,7 @@ fetch(baseURL)
         console.error("Error fetching movie data:", error);
     });
 
-// Call the function to fetch and display movie details
-// fetchMovieDetails();
 
-
-// Define a variable to store the currently selected category
 
 
 

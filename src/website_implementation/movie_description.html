@@ -50,9 +50,12 @@
 
     <div class="description-btn">
         <div class="buttons">
-            <span class="font-size-btn active" onclick="document.getElementById('text').style.fontSize='1em'">A</span>
-            <span class="font-size-btn" onclick="document.getElementById('text').style.fontSize='1.3em'">A</span>
-            <span class="font-size-btn" onclick="document.getElementById('text').style.fontSize='1.5em'">A</span>
+            <span class="font-size-btn active" tabindex="1" onclick="document.getElementById('text').style.fontSize='1em'" 
+            onkeypress="FontSizeKeyPress(event, '1em')">A</span>
+            <span class="font-size-btn" tabindex="2" onclick="document.getElementById('text').style.fontSize='1.3em'"
+            onkeypress="FontSizeKeyPress(event, '1.3em')">A</span>
+            <span class="font-size-btn"  tabindex="3" onclick="document.getElementById('text').style.fontSize='1.5em'"
+            onkeypress="FontSizeKeyPress(event, '1.5em')">A</span>
         </div>
 
     </div>
@@ -71,12 +74,12 @@
 
 
     </div>
-    <div id="cast">
-        <h2 id="content-title">Cast Information</h2>
+    <div class="cast">
+        <h2 class="content-title">Cast Information</h2>
     </div>
     <div class="cast-container">
 
-        <div class="card-cast" data-cast-link="cast_information.html">
+        <div class="card-cast" tabindex="3" data-cast-link="cast_information.html">
             <div class="cast-img"></div>
             <div class="cast-info">
                 <p id="cast-name">Tom Brady</p>
@@ -86,7 +89,7 @@
 
 
         </div>
-        <div class="card-cast" data-cast-link="cast_information.html">
+        <div class="card-cast" tabindex="4" data-cast-link="cast_information.html">
             <div class="cast-img"></div>
             <div class="cast-info">
                 <p id="cast-name">Andy Brady</p>
@@ -98,10 +101,10 @@
 
     <div class="comment-container" id="comment-container">
         <div class="title-container">
-            <h1 id="content-title">User Comment</h1>
+            <h1 class="content-title">User Comment</h1>
 
             <div>
-                <a onclick="hideShow()" id="add-comment" class="add-comment"> + Comment</a>
+                <a tabindex="5" onclick="hideShow()" id="add-comment" class="add-comment"> + Comment</a>
             </div>
 
 

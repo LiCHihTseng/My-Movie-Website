@@ -18,16 +18,16 @@ let selectedRating = null;
 
 const baseURL = "https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/movies/";
 
-// 从URL参数中获取电影标识符
+// Get url movie information
 const urlParams = new URLSearchParams(window.location.search);
 const movieIdentifier = urlParams.get("movie");
 
-// 如果有电影标识符，则调用API以获取该电影的详细信息
+// Fetch all movies
 if (movieIdentifier) {
-    // 构建电影详细信息的URL，例如：
+    // Build a URL with movie details, for example:
     const movieDetailURL = `${baseURL}?title=${movieIdentifier}`;
 
-    // 发起API请求以获取电影详细信息
+    // Get an API request to get movie details
     fetch(movieDetailURL)
         .then(response => response.json())
         .then(data => {
@@ -42,7 +42,7 @@ if (movieIdentifier) {
                 // navigate to a new page
                 window.location.href = newPageURL;
             });
-            // 在此处使用API响应中的数据来填充页面元素，显示电影详细信息
+            // Use the data from the API response here to populate the page element displaying the movie details
             const movieDetails = data[0];
             if (movieDetails) {
                 document.getElementById("movie-title").textContent = movieDetails.title;
@@ -126,98 +126,114 @@ stars.forEach((star, index1) => {
         })
     })
 })
-// Handle form submission
-//I using chatGPT to understand how to  prevent appending a comment card when there are validation errors
+//Set up a font size button to allow keyboard input to work.
+function setFontSize(fontSize) {
+    document.getElementById('text').style.fontSize = fontSize;
+}
+
+function FontSizeKeyPress(event, fontSize) {
+    if (event.key === 'Enter') {
+        setFontSize(fontSize);
+    }
+}
+
+//Set up a card design to allow keyboard input to work.
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        const focusedElement = document.activeElement;
+
+        if (focusedElement.classList.contains('card-cast')) {
+            
+            const castLink = focusedElement.getAttribute('data-cast-link');
+            window.location.href = castLink; 
+        }
+    }
+});
+
+//I using chatGPT to understand how to  
+//prevent appending a comment card when there are validation errors
 //comes from chatGPT https://chat.openai.com/share/4d242577-1f10-4ec3-b9b3-07599ebb60eb
 commentForm.addEventListener('submit', function (event) {
-
     event.preventDefault(); // Prevent the default form submission behavior
     let titleMessage = []
     let starMessage = []
     let message = []
     if (commentTitleInput.value === '' || commentTitleInput.value == null) {
-        titleMessage.push('Title is required')
+        titleMessage.push('Title is required');
     }
     if (selectedRating === null) {
-        starMessage.push('Rate is required')
+        starMessage.push('Rate is required');
     }
     if (commentTextInput.value === '' || commentTextInput.value == null) {
-        message.push('Content is required')
+        message.push('Content is required');
     }
-
 
     if (titleMessage.length > 0) {
         errorTitle.innerText = titleMessage.join(', ');
-        commentTitleInput.style.border='2px solid #FF0000';
+        commentTitleInput.style.border = '2px solid #FF0000';
     } else {
         errorTitle.innerText = '';
-        commentTitleInput.style.border = ''; //reset the border
-        
+        commentTitleInput.style.border = ''; // Reset the border
     }
     if (starMessage.length > 0) {
         errorStar.innerText = starMessage.join(', ');
-
     } else {
         errorStar.innerText = '';
-        
     }
     if (message.length > 0) {
-        errorComment.innerText = message.join(', ')
+        errorComment.innerText = message.join(', ');
         commentTextInput.style.border = '2px solid #FF0000';
-
     } else {
         errorComment.innerText = '';
         commentTextInput.style.border = '';
-        
     }
-    // Get the input values
-    const title = commentTitleInput.value;
-    const text = commentTextInput.value;
 
-    // Create a new comment card
-    const commentCard = document.createElement('div');
-    commentCard.classList.add('card-comment');
+    // Check if there are no validation errors
+    if (titleMessage.length === 0 && starMessage.length === 0 && message.length === 0) {
+        // Get the input values
+        const title = commentTitleInput.value;
+        const text = commentTextInput.value;
 
-    const commentContent = document.createElement('div');
-    commentContent.classList.add('card-content')
+        // Create a new comment card
+        const commentCard = document.createElement('div');
+        commentCard.classList.add('card-comment');
 
+        const commentContent = document.createElement('div');
+        commentContent.classList.add('card-content');
 
+        // Create the title and text elements for the new comment
+        const commentTitle = document.createElement('h2');
+        commentTitle.textContent = title;
+        const commentText = document.createElement('p');
+        commentText.textContent = text;
 
-    // Create the title and text elements for the new comment
-    const commentTitle = document.createElement('h2');
-    commentTitle.textContent = title;
-    const commentText = document.createElement('p');
-    commentText.textContent = text;
+        // Create a new div for the rating
+        const commentRating = document.createElement('div');
+        commentRating.classList.add('card-rate');
 
-    // Create a new div for the rating
-    const commentRating = document.createElement('div');
-    commentRating.classList.add('card-rate');
+        const starIcon = document.createElement('i');
+        starIcon.classList.add('fa-solid', 'fa-star');
 
-    const starIcon = document.createElement('i');
-    starIcon.classList.add('fa-solid', 'fa-star');
+        const cardRateNum = document.createElement('h1');
+        cardRateNum.textContent = selectedRating;
+        commentRating.appendChild(starIcon);
+        commentRating.appendChild(cardRateNum);
 
-    const cardRateNum = document.createElement('h1')
-    cardRateNum.textContent = selectedRating
-    commentRating.appendChild(starIcon);
-    commentRating.appendChild(cardRateNum);
+        // Append the title, text, and rating elements to the comment card
+        commentContent.appendChild(commentTitle);
+        commentContent.appendChild(commentText);
 
-    // Append the title, text, and rating elements to the comment card
-    commentContent.appendChild(commentTitle);
-    commentContent.appendChild(commentText);
+        commentCard.appendChild(commentContent);
+        commentCard.appendChild(commentRating);
 
+        // Append the new comment card to the comment container
+        commentContainer.appendChild(commentCard);
 
-
-
-    commentCard.appendChild(commentContent);
-    commentCard.appendChild(commentRating);
-
-    // Append the new comment card to the comment container
-    commentContainer.appendChild(commentCard);
-
-    // Clear the input fields and reset the selected rating
-    commentTitleInput.value = '';
-    commentTextInput.value = '';
-    selectedRating = null;
+        // Clear the input fields and reset the selected rating
+        commentTitleInput.value = '';
+        commentTextInput.value = '';
+        selectedRating = null;
+    }
 });
 
 

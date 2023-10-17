@@ -99,10 +99,10 @@ body {
         font-size: 1.2em !important;
         
     }
-    #cast{
+    .cast{
         margin: 12px !important;
     }
-    #content-title {
+    .content-title {
        
         font-size: 30px !important;
     }
@@ -199,10 +199,10 @@ body {
         font-size: 1em !important;
         
     }
-    #cast{
+    .cast{
         margin: 12px !important;
     }
-    #content-title {
+    .content-title {
        
         font-size: 24px !important;
     }
@@ -274,15 +274,7 @@ body {
     font-size: 16px;
 }
 
-/* .description-container{
-    position: relative;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    flex-direction: column;
-    margin: 20px auto;
-    padding:0 160px 0 20px; 
-}  */
+/*increase font size button*/
 .description-btn{
     margin-right: 180px;
 }
@@ -320,7 +312,7 @@ body {
     font-size: 1em;
     color: #444;
 }
-
+/*-----------------------------------------------------------------*/
 .movie-description{
     display: flex;
     justify-content: center;
@@ -342,9 +334,14 @@ body {
 }
 
 
-#cast{
+.cast{
     text-align: left;
     margin-left: 8em;
+}
+.content-title{
+    color: #6D58BF;
+    font-size: 36px;
+    text-decoration: underline;
 }
 .cast-container {
     
@@ -354,10 +351,11 @@ body {
 }
 
 .card-cast {
-    width: 500px;
+
     height: 200px;
     margin: 0px 10% 0px 5%;
     display: flex;
+    align-items: center;
 }
 .card-cast:hover{
     outline: solid 3px #6D58BF;
@@ -367,21 +365,17 @@ body {
     margin-right: 160px;
 }
 
-#cast-title {
-    color: #6D58BF;
-    font-size: 36px;
-}
-
 .cast-img {
     background-image: url(../media/Cast_img.png);
-    height: 100%;
-    width: 200px;
+    height: 80%;
+    width: 160px;
     float: left;
     border-radius: 157.5px;
 }
 
 .cast-info{
     margin-left: 3em;
+    padding-right: 60px;
 }
 
 #cast-name {
@@ -402,15 +396,16 @@ body {
 .comment-container{
     margin-left: 8em;
 }
-#content-title{
-    color: #6D58BF;
-    font-size: 36px;
-}
+
 .title-container{
     color:#6D58BF;
     display:flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.title-container a{
+    color: #FF5733;
 }
 
 .add-comment{
@@ -422,7 +417,7 @@ body {
 .add-comment:after{
     content: "";
     position: absolute;
-    background-color: #6D58BF;
+    background-color: #FF5733;
     height: 3px;
     width:0;
     left: 0;
@@ -518,7 +513,7 @@ body {
     width: 80%;
     margin-bottom: 20px;
     background-color: #fff;
-    outline: 2px solid #646464;
+
     box-shadow: 0px 2px 4px rgb(0,0,0,0.5);
 }
 .card-comment h2{
