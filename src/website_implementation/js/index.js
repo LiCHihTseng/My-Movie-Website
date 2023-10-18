@@ -1,24 +1,33 @@
 
+var slideIndex = 1;
+showSlides(slideIndex);
 
-const buttons = document.querySelectorAll("[data-carousel-button]")
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (slides.length === 0 || dots.length === 0) {
+        // Check if no slides or dots are found to prevent errors
+        return;
+    }
+    if (n > slides.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = slides.length; }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].classList.add("active");
+}
 
-buttons.forEach(button => {
-    button.addEventListener("click", () => {
-        const offset = button.dataset.carouselButton === "next" ? 1 : -1
-        const slides = button
-            .closest("[data-carousel]")
-            .querySelector("[data-slides]")
-
-        const activeSlide = slides.querySelector("[data-active]")
-        let newIndex = [...slides.children].indexOf(activeSlide) + offset
-
-        if (newIndex < 0) newIndex = slides.children.length - 1
-        if (newIndex >= slides.children.length) newIndex = 0
-
-        slides.children[newIndex].dataset.active = true
-        delete activeSlide.dataset.active
-    })
-})
 
 
 // API base URL
@@ -33,6 +42,7 @@ fetch(baseURL)
 
         // Loop through the movie data and create HTML elements
         data.forEach((movie, index) => {
+            index = 4;
             // Create a movie details div
             const movieDetailsDiv = document.createElement("div");
             movieDetailsDiv.classList.add("card");
@@ -58,7 +68,7 @@ fetch(baseURL)
 
             // Create and set the movie release date
             const releaseDate = document.createElement("p");
-            releaseDate.setAttribute('id','release-date');
+            releaseDate.setAttribute('id', 'release-date');
             releaseDate.textContent = `2023`;
 
             // Create and set the movie category
@@ -107,5 +117,5 @@ searchButton.addEventListener("click", (event) => {
     event.preventDefault();
     // Use JavaScript to navigate to the "movie_list.html" page
     window.location.href = "movie_list.html";
-    console.log(123)
+
 });

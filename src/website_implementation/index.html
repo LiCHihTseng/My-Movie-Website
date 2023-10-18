@@ -11,6 +11,10 @@
             0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,500;1,9..40,600&family=Roboto:ital,
             wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <!--Fontawesome CDN link comes from https://fontawesome.com/-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Language Selector</title>
 </head>
 
@@ -18,7 +22,7 @@
     <div class="grid-container">
         <div class="brand">Movie</div>
         <div class="searchbox col-lg-5">
-            <form class="search_element">
+            <form tabindex="1" class="search_element">
                 <input type="text" placeholder="Search a movie">
                 <button class="search_btn" type="submit" id="searchButton">Search<img src="media/search.svg">
                 </button>
@@ -34,65 +38,90 @@
     </div>
 
 
+    <!--Image Slider reference from Youtube tutorial https://www.youtube.com/watch?v=DpHi9Ruu8R4&ab_channel=CodingWithNick-->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="media/Poster.png">
+            <div class="text">John Wick 3</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="media/Poster2.png">
+            <div class="text">Mission Impossible</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="media/poster3.jpg">
+            <div class="text">Batman</div>
+        </div>
+
+        <a class="prev" tabindex="2" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" tabindex="3" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    <div style="text-align: center;">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <div class="content-container">
 
 
-    <section aria-label="Newest Photos">
-        <div class="carousel" data-carousel>
-            <button class="carousel-button prev" data-carousel-button="prev">
-                <img src="media/mingcute_left-line.png" alt="">
-            </button>
-            <button class="carousel-button next" data-carousel-button="next">
-                <img src="media/mingcute_right-line.png" alt="">
-            </button>
-            <div id="content">
-                <h1 id="heading">John Wick 3 : Parabellum</h1>
-                <p id="description">John Wick is on the run after killing a member of the international assassins'
-                    guild,
-                    and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</p>
-                <button class="slider_button">Watch information</button>
+        <div class="content-title">
+            <div class="title">Playing Movies (Currently)</div>
+            <div class="content-links">
+                <a href="movie_list.html" style="font-size: 24px; color:#FF5733">see more
+                    <img src="media/Chevron right.svg"></a>
+
             </div>
 
-            <ul data-slides>
-                <li class="slide" data-active>
-                    <img src="media/Poster.png" alt="Movie 1">
-                </li>
-                <li class="slide">
-                    <img src="media/Rectangle 2.png" alt="Movie 2">
-                </li>
-                <li class="slide">
-                    <img src="media/Rectangle 7.png" alt="Movie 3">
-                </li>
-            </ul>
         </div>
-
-    </section>
-    <div class="content-title">
-        <div class="title">Playing Movies (Currently)</div>
-        <div class="content-links">
-            <a href="movie_list.html" style="font-size: 24px; color:#FF5733">see more
-                <img src="media/Chevron right.svg"></a>
-
-        </div>
-
-    </div>
-    <section class="card-container">
         <div id="card-container"></div>
-
-    </section>
+    </div>
 
 
     <footer>
+        <div class="footer-content">
+            <h3>Movie</h3>
+            <p>The best movie website in the world</p>
+            <ul class="social">
 
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-google-plus-g"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+
+            </ul>
+
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy; 2023 Movie. designed by <span>s47688186 Li-Chih Tseng</span></p>
+        </div>
     </footer>
 
 
 </body>
 <script src="js/index.js"></script>
+
 <script src="https://res.zvo.cn/translate/translate.js"></script>
 <script>
     translate.selectLanguageTag.show = true; //Select language for select that does not appear
     translate.ignore.class.push('brand'); //Ignore translating the brand class.
+    translate.selectLanguageTag.languages = 'english,chinese_simplified,korean,arabic,japanese,italian,spanish';
     translate.execute();
+
+    window.onload = function () {
+        translate.selectLanguageTag.show = true;
+        translate.ignore.class.push('brand');
+        translate.selectLanguageTag.languages = 'english,chinese_simplified,korean,arabic,japanese,italian,spanish';
+        translate.execute();
+
+
+    };
+
 </script>
 
 </html>
