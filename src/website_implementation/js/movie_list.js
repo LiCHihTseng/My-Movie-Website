@@ -37,7 +37,7 @@ fetch(baseURL)
             // Create and set the movie release date
             const movieRate = document.createElement("p");
             movieRate.setAttribute('id', 'movie-rate');
-            movieRate.textContent = `8.0`;
+            movieRate.textContent = `4.0`;
 
             // Create and set the movie category
             const category = document.createElement("p");

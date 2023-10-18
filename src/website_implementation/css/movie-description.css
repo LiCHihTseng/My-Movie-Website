@@ -435,6 +435,7 @@ body {
     margin: 0px 10% 0px 5%;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 .card-cast:hover{
     outline: solid 3px #6D58BF;
@@ -445,12 +446,11 @@ body {
 }
 
 .cast-img {
-   
-    height: 80%;
-    width: 10vh;
-    float: left;
+    height: 100%;
 
+    float: left;
     display: flex;
+    object-fit: cover;
     justify-content: center;
 
 }

@@ -100,9 +100,19 @@ cardCastElements.forEach((card) => {
 
     });
 });
+// Select the button element by its id
+const searchButton = document.getElementById("searchButton");
+
+// Add a click event listener to the button
+searchButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    //Navigate to the "movie_list.html" page
+    window.location.href = "movie_list.html";
+    
+});
 
 
-//if click the +comment element show the form
+//click the +Add Comment element show the form
 function hideShow() {
     if (display == 1) {
         formDiv.style.display = 'flex';
@@ -115,6 +125,7 @@ function hideShow() {
     }
 }
 
+//click rate animation reference from Youtube https://www.youtube.com/watch?v=q1xhbc-oKnc&pp=ygUJcmF0ZSBodG1s
 stars.forEach((star, index1) => {
 
     star.addEventListener("click", () => {
@@ -126,6 +137,7 @@ stars.forEach((star, index1) => {
         })
     })
 })
+
 //Set up a font size button to allow keyboard input to work.
 function setFontSize(fontSize) {
     document.getElementById('text').style.fontSize = fontSize;

@@ -92,7 +92,7 @@ body {
 
 #card-container{
     display: grid;
-    grid-column: 1/4;
+    grid-column: 1/5;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 360px));
     grid-gap: 2rem;
     /* align-items: start; */
@@ -132,6 +132,13 @@ body {
 .card:focus {
     outline: 4px solid #6D58BF; /* Add border color, width, and style */
 }
+.filter{
+    margin-left: 40px;
+}
+.filter h2{
+    font-size: 36px;
+    color: #6D58BF;
+}
 .button-value{
     border: 2px solid #6D58BF;
     color: #6D58BF;
@@ -139,7 +146,7 @@ body {
     border-radius: 12px;
     background-color: transparent;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 20px;
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
