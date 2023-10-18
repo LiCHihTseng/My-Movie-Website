@@ -445,11 +445,19 @@ body {
 }
 
 .cast-img {
-    background-image: url(../media/Cast_img.png);
+   
     height: 80%;
-    width: 160px;
+    width: 10vh;
     float: left;
-    border-radius: 157.5px;
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.cast-img img{
+    border-radius: 50%;
+    border: 5px solid #6D58BF;
 }
 
 .cast-info{
