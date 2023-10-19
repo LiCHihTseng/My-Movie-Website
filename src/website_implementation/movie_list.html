@@ -20,22 +20,36 @@
 </head>
 
 <body>
-    <div class="grid-container">
-        <div class="brand col-lg-3">Movie</div>
-        <div class="page-links col-lg-3">
-            <div id="translate">
+    <nav>
+        <div class="grid-container">
+            <div class="col-lg-2 col-md-1 col-1 brand">
+                <a a href="index.html" title="Movie homepage">Movie</a>
             </div>
+            <div class="searchbox col-lg-5 col-md-3 col-2">
+                <div class="search_element">
+                    <input type="text" placeholder="Search a movie">
+                    <button class="search_btn" type="submit" id="searchButton">Search<img src="media/search.svg">
+                    </button>
+                </div>
+            </div>
+            <div class="page-links col-lg-5 col-md-2 col-2">
+                <a href="movie_list.html" title="Movie Category">Category</a>
 
+                <div id="translate">
+                </div>
+    
+            </div>
+    
+    
         </div>
+    </nav>
 
-
-    </div>
     <h2 id="title">Trending Movie</h2>
     <div class="content-container">
 
-        <div id="card-container">
+        <div id="card-container"></div>
 
-        </div>
+        
         <!--Filter function reference comes from https://www.youtube.com/watch?v=RKfMtCNx1z0&ab_channel=CodingNepal-->
         <div class="filter">
             <h2>Filter</h2>

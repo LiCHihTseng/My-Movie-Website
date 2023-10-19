@@ -26,6 +26,12 @@ body {
     grid-template-rows: auto 1fr;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto 1fr;
+}
+
 .brand {
     display: flex;
     align-items: center;
@@ -89,7 +95,42 @@ body {
         display: flex;
     align-items: center;
     justify-content: end;
+    gap: 24px;
 
+}
+.page-links a{
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.page-links a:after{
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    height: 3px;
+    width:0;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+    border-radius: 99px;
+}
+.page-links a:hover:after{
+    width: 100%;
+}
+
+.translateSelectLanguage {
+
+    top: 100px;
+    right: 100px;
+    background-color: #FF5733;
+    color:white;
+    width: 70px;
+    height:45px;
+
+    border-radius: 4px;
 }
 .poster-container{
     display: grid;

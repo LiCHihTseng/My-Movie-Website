@@ -23,29 +23,105 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(12,1fr);
-    grid-template-rows: 80px 1fr;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto 1fr;
 }
 
 .brand {
-    /* grid-column: 1 / span 6; */
+    display: flex;
+    align-items: center;
     grid-row: 1 / span 2;
     background-color: #6D58BF;
-    /* new line – just copy and paste this line */
-    padding: 15px;
+
+
+
+
+
+}
+.brand a{
+    color: #fff;
+    text-decoration:none;
     font-size: 40px;
     font-weight: bold;
     color: white;
+    padding: 15px;
+    font-family: 'Pacifico', cursive;
+}
+
+.searchbox{
+    grid-row: 1 / span2;
+    background-color: #6D58BF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.search_element{
+    background-color: #fff;
+    width: 80%;
+    height: 45px;
+    display: flex;
+    border-radius: 8px;
+}
+.search_element input{
+    flex: 1;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+}
+.search_btn{
+    background: #FF5733;
+    padding: 10px 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
 }
 .page-links {
-    grid-column: 7 / span 6;
     grid-row: 1/ span 2;
     text-align: right;
     background-color: #6D58BF;
     /* new line – just copy and paste this line */
     padding: 10px;
     padding-right: 6vw;
+        display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 24px;
+
 }
+.page-links a{
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.page-links a:after{
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    height: 3px;
+    width:0;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+    border-radius: 99px;
+}
+.page-links a:hover:after{
+    width: 100%;
+}
+
+
+
+
+
 .translateSelectLanguage {
 
     top: 100px;
@@ -54,14 +130,21 @@ body {
     color:white;
     width: 70px;
     height:45px;
-    margin-top: 15px;
+
     border-radius: 4px;
 }
+
+
 .content-container{
     display: grid;
-    grid-template-columns: auto auto auto;
-    grid-auto-flow: column
+    grid-template-columns: 3fr 1fr;
+    grid-auto-flow: column;
+    margin-bottom: 200px;
 }
+.rate-container {
+    display: flex;
+    justify-content: flex-end;
+  }
 #movie-rate{
     color: #FF5733;
     font-size: 24px;
@@ -73,7 +156,7 @@ body {
     display: inline-block;
     border: 3px solid #FF5733;
     text-align: right;
-    margin-left: 12em;
+    margin-right: 12px;
 }
 
 #card-title{
@@ -92,12 +175,11 @@ body {
 
 #card-container{
     display: grid;
-    grid-column: 1/5;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 360px));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 340px));
     grid-gap: 2rem;
     /* align-items: start; */
     margin-left: 4rem;
-    margin-right: 3rem;
+
 
 }
 #title{
@@ -226,4 +308,59 @@ footer{
     text-transform: uppercase;
     opacity: .4;
     font-weight: 200;
+}
+
+@media only screen and (min-width: 601px )and (max-width: 1194px) {
+    .col-md-1 { grid-column: span 1;}
+    .col-md-2 { grid-column: span 2;}
+    .col-md-3 { grid-column: span 3;}
+    .col-md-4 { grid-column: span 4;}
+    .col-md-5 { grid-column: span 5;}
+    .col-md-6 { grid-column: span 6;}
+    .col-md-7 { grid-column: span 7;}
+    .col-md-8 { grid-column: span 8;}
+    .col-md-9 { grid-column: span 9;}
+    .col-md-10 { grid-column: span 10;}
+    .col-md-11 { grid-column: span 11;}
+    .col-md-12 { grid-column: span 12;}
+    /* .search_element {
+        width: 340px !important; 
+    
+    } */
+
+    .search_btn {
+        padding: 10px 20px !important;
+    }
+    .brand a{
+        font-size: 30px !important;
+    }
+}
+/* Media query for screens with a maximum width of 600px (typical for mobile devices) */
+@media screen and (max-width: 600px) {
+    .col-1 { grid-column: span 1;}
+    .col-2 { grid-column: span 2;}
+    .col-3 { grid-column: span 3;}
+    .col-4 { grid-column: span 4;}
+    .col-5 { grid-column: span 5;}
+    .col-6 { grid-column: span 6;}
+    .col-7 { grid-column: span 7;}
+    .col-8 { grid-column: span 8;}
+    .col-9 { grid-column: span 9;}
+    .col-10 { grid-column: span 10;}
+    .col-11 { grid-column: span 11;}
+    .col-12 { grid-column: span 12;}
+
+
+    .search_btn {
+        padding: 10px !important;
+        text-indent: -9999px !important;
+        
+    }
+    .page-links{
+        padding: 0px !important;
+        padding-right: 0px !important;
+    }
+    .brand a{
+        font-size: 20px !important;
+    }
 }

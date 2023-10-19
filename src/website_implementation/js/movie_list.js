@@ -34,7 +34,11 @@ fetch(baseURL)
             title.setAttribute('id', 'card-title')
             title.textContent = movie.title;
 
-            // Create and set the movie release date
+            //Create and set the movie rate div
+            const movieRateDiv = document.createElement("div");
+            movieRateDiv.setAttribute('class', 'rate-container');
+            
+            // Create and set the movie rate
             const movieRate = document.createElement("p");
             movieRate.setAttribute('id', 'movie-rate');
             movieRate.textContent = `4.0`;
@@ -63,7 +67,8 @@ fetch(baseURL)
             // Append all elements to the movie details div
 
             movieDetailsDiv.appendChild(posterImage); // Append the image
-            movieDetailsDiv.appendChild(movieRate);
+            movieRateDiv.appendChild(movieRate); // append rate on div element
+            movieDetailsDiv.appendChild(movieRateDiv);
             movieDetailsDiv.appendChild(title);
 
             movieDetailsDiv.appendChild(category);
