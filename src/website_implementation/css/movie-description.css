@@ -252,6 +252,7 @@ body {
         height: 50vw !important;
         grid-column: 1/5 !important;
         grid-row: 6/13 !important;
+        background-size: contain !important;
     }
     #small-movie-img{
         width: 0% !important;
@@ -259,7 +260,7 @@ body {
     }
     .poster-content{
         grid-row: 5/12 !important;
-        grid-column: 7/11 !important;
+        grid-column: 6/11 !important;
     }
     
     #release-date{
@@ -267,7 +268,7 @@ body {
         font-size: 16px !important;
     }
     #movie-title{
-        font-size: 30px !important;
+        font-size: 24px !important;
         margin-bottom: 0px;
     }
     #category{
@@ -336,7 +337,7 @@ body {
 
 #movie-img{
     background-image: url('../media/Rectangle\ 2.png');
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
     height: 30vw;
@@ -356,11 +357,14 @@ body {
     grid-column: 2/5;
     z-index: 2 ;
 }
-#release-date{
-    color: #2C10A0; 
+.movie-rate{
+    color: #FF5733;
     font-weight: bold;
     margin-bottom: 0px;
     font-size: 24px;
+    border: 4px solid #FF5733;
+    display: inline-block;
+    padding: 0 12px;
 }
 #movie-title{
     margin-top:0px;
@@ -479,12 +483,24 @@ body {
     align-items: center;
     overflow: hidden;
 }
-.card-cast:hover{
-    outline: solid 3px #6D58BF;
+.card-cast:hover #cast-name{
+    position: relative;
+
 
 }
-#add-comment{
-    margin-right: 160px;
+.card-cast:hover #cast-name:after{
+    content: "";
+    position: absolute;
+    background-color: #444;
+    height: 3px;
+    width:0;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+    border-radius: 99px;
+}
+.card-cast:hover #cast-name:hover:after{
+    width: 100%;
 }
 
 .cast-img {
@@ -541,6 +557,7 @@ body {
     position: relative;
     font-weight: 600;
     font-size: 24px;
+    margin-right: 160px;
 }
 
 .add-comment:after{
