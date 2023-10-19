@@ -60,7 +60,8 @@ body {
 .search_element{
     background-color: #fff;
     width: 80%;
-    height: 45px;
+    height:5vw;
+    max-height: 45px;
     display: flex;
     border-radius: 8px;
 }
@@ -86,7 +87,7 @@ body {
     grid-row: 1/ span 2;
     text-align: right;
     background-color: #6D58BF;
-    /* new line – just copy and paste this line */
+
     padding: 10px;
     padding-right: 6vw;
         display: flex;
@@ -95,29 +96,7 @@ body {
     gap: 24px;
 
 }
-.page-links a{
-    color: #fff;
-    text-decoration: none;
-    position: relative;
-    font-weight: 600;
-    font-size: 20px;
-    padding-top: 12px;
-}
 
-.page-links a:after{
-    content: "";
-    position: absolute;
-    background-color: #fff;
-    height: 3px;
-    width:0;
-    left: 0;
-    bottom: -5px;
-    transition: 0.3s;
-    border-radius: 99px;
-}
-.page-links a:hover:after{
-    width: 100%;
-}
 
 
 
@@ -130,10 +109,11 @@ body {
     background-color: #FF5733;
     color:white;
     width: 70px;
-    height:45px;
-
+    height:5vw;
+    max-height: 45px;
     border-radius: 4px;
 }
+
 
 
 .content-container{
@@ -329,11 +309,16 @@ footer{
     
     } */
 
+    /* .search_element {
+        width: 340px !important; 
+    
+    }*/ 
+
     .search_btn {
         padding: 10px 20px !important;
     }
-    .brand a{
-        font-size: 30px !important;
+    .slider-content{
+        bottom: 25vw !important;
     }
 }
 /* Media query for screens with a maximum width of 600px (typical for mobile devices) */
@@ -352,6 +337,19 @@ footer{
     .col-12 { grid-column: span 12;}
 
 
+    .brand a{
+        font-size: 16px !important;
+    }
+    .searchbox{
+        justify-content: end !important;
+    }
+    .search_element{
+        background-color: transparent !important;
+        width: auto;
+    }
+    .search_element input{
+        display: none !important;
+    }
     .search_btn {
         padding: 10px !important;
         text-indent: -9999px !important;
@@ -361,7 +359,34 @@ footer{
         padding: 0px !important;
         padding-right: 0px !important;
     }
-    .brand a{
-        font-size: 20px !important;
+    #title{
+        padding-left: 12px !important;
+        font-size: 24px !important;
+    }
+
+    .content-container {
+        grid-template-rows: auto auto !important;
+    }
+    #card-container {
+        grid-row: 2 !important;
+    }
+    .filter {
+        grid-row: 1 !important;
+        grid-column: 1 !important;
+        margin-left: 12px !important;
+    }
+    .filter h2{
+        font-size: 24px !important;
+    }
+    .filter_buttons{
+        display: flex;
+        gap: 2vw;
+        flex-wrap: wrap;
+    }
+    .button-value {
+        font-size: 16px;
+    }
+    #card-container{
+        margin-left: 12px !important;
     }
 }
