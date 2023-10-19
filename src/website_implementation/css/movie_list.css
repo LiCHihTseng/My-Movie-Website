@@ -361,7 +361,7 @@ footer{
     }
     #title{
         padding-left: 12px !important;
-        font-size: 24px !important;
+        font-size: 18px !important;
     }
 
     .content-container {
@@ -376,7 +376,7 @@ footer{
         margin-left: 12px !important;
     }
     .filter h2{
-        font-size: 24px !important;
+        font-size: 18px !important;
     }
     .filter_buttons{
         display: flex;
@@ -384,7 +384,7 @@ footer{
         flex-wrap: wrap;
     }
     .button-value {
-        font-size: 16px;
+        font-size: 14px;
     }
     #card-container{
         margin-left: 12px !important;
