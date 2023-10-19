@@ -336,7 +336,8 @@ body {
 
 #movie-img{
     background-image: url('../media/Rectangle\ 2.png');
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     width: 100%;
     height: 30vw;
     max-width: 100%;
