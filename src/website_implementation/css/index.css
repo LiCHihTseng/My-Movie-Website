@@ -67,7 +67,8 @@ body {
 .search_element{
     background-color: #fff;
     width: 80%;
-    height: 45px;
+    height:5vw;
+    max-height: 45px;
     display: flex;
     border-radius: 8px;
 }
@@ -93,7 +94,7 @@ body {
     grid-row: 1/ span 2;
     text-align: right;
     background-color: #6D58BF;
-    /* new line – just copy and paste this line */
+
     padding: 10px;
     padding-right: 6vw;
         display: flex;
@@ -102,29 +103,7 @@ body {
     gap: 24px;
 
 }
-.page-links a{
-    color: #fff;
-    text-decoration: none;
-    position: relative;
-    font-weight: 600;
-    font-size: 20px;
-    padding-top: 12px;
-}
 
-.page-links a:after{
-    content: "";
-    position: absolute;
-    background-color: #fff;
-    height: 3px;
-    width:0;
-    left: 0;
-    bottom: -5px;
-    transition: 0.3s;
-    border-radius: 99px;
-}
-.page-links a:hover:after{
-    width: 100%;
-}
 
 
 
@@ -137,8 +116,8 @@ body {
     background-color: #FF5733;
     color:white;
     width: 70px;
-    height:45px;
-
+    height:5vw;
+    max-height: 45px;
     border-radius: 4px;
 }
 
@@ -184,10 +163,11 @@ body {
     margin-top: -22px;
     color: #fff;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 36px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
+    background-color: rgba(0,0,0,0.5);
 }
 .next{
     right: 0;
@@ -266,18 +246,17 @@ body {
 }
 
 .content-title{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-template-rows: auto 1fr;
-    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    margin: 12px;
 }
 
 
 .title{
     grid-column: 1 / span 2;
     grid-row: 1 / span 2;
-    /* new line – just copy and paste this line */
-    padding: 15px;
+    display: flex;
+    align-items: center;
     font-size: 40px;
     font-weight: bold;
     color: #6D58BF;
@@ -463,14 +442,33 @@ footer{
     .search_btn {
         padding: 10px 20px !important;
     }
+    .slider-content{
+        bottom: 25vw !important;
+    }
+    .text{
+        line-height: normal;
+    }
+    .title{
+        font-size: 24px !important;
+    }
+
 }
 /* Media query for screens with a maximum width of 768px (typical for mobile devices) */
 @media screen and (max-width: 600px) {
-    .search_element {
-        width: 250px !important; /* Adjust the width for smaller screens */
-    
-    }
 
+    .brand a{
+        font-size: 12px !important;
+    }
+    .searchbox{
+        justify-content: end !important;
+    }
+    .search_element{
+        background-color: transparent !important;
+        width: auto;
+    }
+    .search_element input{
+        display: none !important;
+    }
     .search_btn {
         padding: 10px !important;
         text-indent: -9999px !important;
@@ -489,6 +487,20 @@ footer{
         height: 10px !important;
         width: 10px !important;
     }
+    .slider-content{
+        bottom: 25vw !important;
+    }
+
+    .text{
+
+        display: none !important;
+    }
+    .title{
+        font-size: 16px !important;
+    }
+    .content-links a{
+        font-size: 16px !important;
+    }
 }
 
 
@@ -497,168 +509,3 @@ footer{
 
 
 
-.content-container{
-    display: grid;
-    grid-template-rows: auto auto;
-}
-
-.content-title{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-template-rows: auto 1fr;
-}
-
-
-.title{
-    grid-column: 1 / span 2;
-    grid-row: 1 / span 2;
-    /* new line – just copy and paste this line */
-    padding: 15px;
-    font-size: 40px;
-    font-weight: bold;
-    color: #6D58BF;
-}
-.content-links {
-    grid-column: 3 / span 2;
-    grid-row: 1/3;
-    text-align: right;
-    
-    /* new line – just copy and paste this line */
-    padding: 10px;
-    padding-right: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-
-}
-.content-links a{
-    text-decoration: none;
-}
-.content-links img{
-    position: relative;
-    top: 5px;
-}
-#release-date{
-    color: #6D58BF;
-    font-size: 20px;
-    font-weight: 600;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding-left: 12px;
-}
-
-#card-title{
-    margin: 12px 0px 12px 12px;
-}
-
-#category{
-    color: #6D58BF;
-    padding-left: 12px;
-    font-weight: 600;
-}
-
-.cinema-details{
-    padding-left: 12px;
-}
-
-#card-container{
-    display: flex;
-    padding-left: 34px;
-    flex-wrap: wrap;
-    gap: 34px;
-}
-.card{
-    background-color: white;
-    width: 320px;
-    /* height:520px; */
-    background-size: contain;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
-}
-.card img{
-    background-color: aqua;
-    height:300px;
-    width: 100%;
-    margin-bottom: 15px;
-    background-size: cover;
-    background-size: 100% 100%;
-}
-.card:hover {
-    outline: 4px solid #6D58BF; /* Add border color, width, and style */
-}
-
-.card:focus {
-    outline: 4px solid #6D58BF; /* Add border color, width, and style */
-}
-
-footer{
-    background: #6D58BF;
-    height: auto;
-    width: 100vw;
-    padding-top: 40px;
-    color: #fff;
-}
-.footer-content{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-}
-.footer-content h3{
-    font-size: 1.8rem;
-    font-weight: 400;
-    margin-bottom: 0px;
-    font-family: 'Pacifico', cursive;
-}
-.footer-content p{
-    max-width: 500px;
-    margin: 10px auto;
-    line-height: 14px;
-    font-size: 14px;
-
-}
-
-.social{
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin:1rem 0 3rem 0;
-}
-
-.social li{
-    margin: 0 10px;
-}
-
-.social a{
-    text-decoration: none;
-    color: #fff;
-}
-
-.social a i{
-    font-size: 1.1rem;
-    transition: color .4s ease;
-}
-
-.social a:hover i{
-    color: #FF5733;
-}
-
-.footer-bottom{
-    background: #6D58BF;
-    width: 100vw;
-    padding: 20px 0;
-    text-align: center;
-}
-.footer-bottom p{
-    font-size: 14px;
-    word-spacing: 2px;
-    text-transform: capitalize;
-}
-.footer-bottom span{
-    text-transform: uppercase;
-    opacity: .4;
-    font-weight: 200;
-}
