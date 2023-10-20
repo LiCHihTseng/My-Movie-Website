@@ -21,23 +21,23 @@
 <body>
     <nav>
         <div class="grid-container">
-            <div class="brand">
+            <div class="col-lg-2 col-md-1 col-1 brand">
                 <a a href="index.html">Movie</a>
             </div>
-            <div class="searchbox col-lg-5">
+            <div class="col-lg-5 col-md-3 col-2 searchbox">
                 <form class="search_element">
                     <input type="text" placeholder="Search a movie">
                     <button class="search_btn" type="submit" id="searchButton">Search<img src="media/search.svg">
                     </button>
                 </form>
             </div>
-            <div class="page-links">
+            <div class="col-lg-5 col-md-2 col-2 page-links">
                 <div id="translate">
                 </div>
-    
+
             </div>
-    
-    
+
+
         </div>
     </nav>
 
@@ -62,12 +62,13 @@
     <!--Click Button to Change Font-size reference from https://www.youtube.com/watch?v=xOy0kVlbhlc&pp=ygUZaW5jcmVhc2UgZm9udCBzaXplIGJ1dHRvbg%3D%3D-->
     <div class="description-btn">
         <div class="buttons">
-            <span class="font-size-btn active" tabindex="1" onclick="document.getElementById('text').style.fontSize='1em'" 
-            onkeypress="FontSizeKeyPress(event, '1em')">A</span>
+            <span class="font-size-btn active" tabindex="1"
+                onclick="document.getElementById('text').style.fontSize='1em'"
+                onkeypress="FontSizeKeyPress(event, '1em')">A</span>
             <span class="font-size-btn" tabindex="2" onclick="document.getElementById('text').style.fontSize='1.3em'"
-            onkeypress="FontSizeKeyPress(event, '1.3em')">A</span>
-            <span class="font-size-btn"  tabindex="3" onclick="document.getElementById('text').style.fontSize='1.5em'"
-            onkeypress="FontSizeKeyPress(event, '1.5em')">A</span>
+                onkeypress="FontSizeKeyPress(event, '1.3em')">A</span>
+            <span class="font-size-btn" tabindex="3" onclick="document.getElementById('text').style.fontSize='1.5em'"
+                onkeypress="FontSizeKeyPress(event, '1.5em')">A</span>
         </div>
 
     </div>
@@ -129,7 +130,9 @@
 
 
         </div>
-        <!--form validation reference from Youtube https://www.youtube.com/watch?v=In0nB0ABaUk&pp=ygUPZm9ybSB2YWxpZGF0aW9u--> 
+    </div>
+    <div class="comment-content-container">
+        <!--form validation reference from Youtube https://www.youtube.com/watch?v=In0nB0ABaUk&pp=ygUPZm9ybSB2YWxpZGF0aW9u-->
         <div id="form-comment" class="form-comment">
             <form id="comment-form">
                 <input type="text" name="full_name" id="comment-title" placeholder="Title">
@@ -140,7 +143,7 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
-                
+
                 </div>
                 <div id="error-star"></div>
 
@@ -170,7 +173,7 @@
             </div>
 
         </div>
- 
+
         <div class="card-comment">
             <div class="card-content">
                 <h2>The best movie in 2023</h2>
@@ -186,7 +189,9 @@
                 <h1>3</h1>
             </div>
         </div>
+
     </div>
+
 
     <footer>
         <div class="footer-content">
@@ -204,7 +209,7 @@
 
         </div>
         <div class="footer-bottom">
-            <p>copyright  &copy; 2023 Movie. designed by <span>s47688186 Li-Chih Tseng</span></p>
+            <p>copyright &copy; 2023 Movie. designed by <span>s47688186 Li-Chih Tseng</span></p>
         </div>
     </footer>
 
