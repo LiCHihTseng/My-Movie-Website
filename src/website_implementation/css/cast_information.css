@@ -32,17 +32,20 @@ body {
     align-items: center;
     grid-row: 1 / span 2;
     background-color: #6D58BF;
-    padding: 15px;
-    font-size: 40px;
-    font-weight: bold;
-    color: white;
 
-    font-family: 'Pacifico', cursive;
+
+
+
 
 }
 .brand a{
     color: #fff;
-    text-decoration:none
+    text-decoration:none;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    padding: 15px;
+    font-family: 'Pacifico', cursive;
 }
 
 .searchbox{
@@ -56,8 +59,9 @@ body {
 
 .search_element{
     background-color: #fff;
-    width: 600px;
-    height: 45px;
+    width: 80%;
+    height:5vw;
+    max-height: 45px;
     display: flex;
     border-radius: 8px;
 }
@@ -80,18 +84,23 @@ body {
     align-items: center;
 }
 .page-links {
-    grid-column: 7 / span 6;
     grid-row: 1/ span 2;
     text-align: right;
     background-color: #6D58BF;
-    /* new line – just copy and paste this line */
+
     padding: 10px;
     padding-right: 6vw;
         display: flex;
     align-items: center;
     justify-content: end;
+    gap: 24px;
 
 }
+
+
+
+
+
 
 .translateSelectLanguage {
 
@@ -100,10 +109,13 @@ body {
     background-color: #FF5733;
     color:white;
     width: 70px;
-    height:45px;
-
+    height:5vw;
+    max-height: 45px;
     border-radius: 4px;
 }
+
+
+
 .cast-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));;

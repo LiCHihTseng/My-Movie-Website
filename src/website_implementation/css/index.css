@@ -280,7 +280,6 @@ body {
     position: relative;
     font-weight: 600;
 
-    padding-top: 12px;
     font-size: 24px;
 }
 
@@ -519,6 +518,9 @@ footer{
     }
     .content-links a{
         font-size: 16px !important;
+    }
+    .card{
+        width: 250px !important;
     }
 }
 

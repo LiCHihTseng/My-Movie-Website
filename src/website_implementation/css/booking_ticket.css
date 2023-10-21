@@ -20,36 +20,85 @@ body {
 .col-lg-10 { grid-column: span 10;}
 .col-lg-11 { grid-column: span 11;}
 .col-lg-12 { grid-column: span 12;}
+
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: minmax(10vh, auto);
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto 1fr;
 }
+
 .brand {
     display: flex;
     align-items: center;
     grid-row: 1 / span 2;
     background-color: #6D58BF;
-    padding: 15px;
+
+
+
+
+
+}
+.brand a{
+    color: #fff;
+    text-decoration:none;
     font-size: 40px;
     font-weight: bold;
     color: white;
-
+    padding: 15px;
     font-family: 'Pacifico', cursive;
+}
+
+.searchbox{
+    grid-row: 1 / span2;
+    background-color: #6D58BF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
+
+.search_element{
+    background-color: #fff;
+    width: 80%;
+    height:5vw;
+    max-height: 45px;
+    display: flex;
+    border-radius: 8px;
+}
+.search_element input{
+    flex: 1;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    display: block; 
+}
+.search_btn{
+    background: #FF5733;
+    padding: 10px 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
 .page-links {
-    grid-column: 7 / span 6;
     grid-row: 1/ span 2;
     text-align: right;
     background-color: #6D58BF;
-    /* new line – just copy and paste this line */
+
     padding: 10px;
     padding-right: 6vw;
-    display: flex;
+        display: flex;
     align-items: center;
     justify-content: end;
+    gap: 24px;
+
 }
+
+
 .translateSelectLanguage {
 
     top: 100px;
@@ -57,10 +106,13 @@ body {
     background-color: #FF5733;
     color:white;
     width: 70px;
-    height:45px;
-    margin-top: 15px;
+    height:5vw;
+    max-height: 45px;
     border-radius: 4px;
 }
+
+/*-----------------------------------------------*/
+
 .poster-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));;
@@ -139,6 +191,8 @@ body {
     align-items: center;
     justify-content: space-around;
     margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 
@@ -391,4 +445,128 @@ footer{
     text-transform: uppercase;
     opacity: .4;
     font-weight: 200;
+}
+
+/*Responsive*/
+
+@media only screen and (min-width: 601px )and (max-width: 1194px) {
+    .col-md-1 { grid-column: span 1;}
+    .col-md-2 { grid-column: span 2;}
+    .col-md-3 { grid-column: span 3;}
+    .col-md-4 { grid-column: span 4;}
+    .col-md-5 { grid-column: span 5;}
+    .col-md-6 { grid-column: span 6;}
+    .col-md-7 { grid-column: span 7;}
+    .col-md-8 { grid-column: span 8;}
+    .col-md-9 { grid-column: span 9;}
+    .col-md-10 { grid-column: span 10;}
+    .col-md-11 { grid-column: span 11;}
+    .col-md-12 { grid-column: span 12;}
+
+
+    .search_btn {
+        padding: 10px 20px !important;
+    }
+    .slider-content{
+        bottom: 25vw !important;
+    }
+    .poster-content{
+        margin-left: 20px !important;
+    }
+    #release-date{
+        margin-top: 0px !important;
+        font-size: 20px !important;
+    }
+    #movie-title{
+        font-size: 30px !important;
+    }
+    #category{
+        font-size: 20px !important;
+    }
+    #ticket-price{
+        line-height: 150% !important;
+        font-size: 16px !important;
+    }
+    #movie-description{
+        margin-right: 20px !important;
+        font-size: 14px !important;
+    }
+
+}
+
+@media only screen and (max-width: 600px ){
+    .col-1 { grid-column: span 1;}
+    .col-2 { grid-column: span 2;}
+    .col-3 { grid-column: span 3;}
+    .col-4 { grid-column: span 4;}
+    .col-5 { grid-column: span 5;}
+    .col-6 { grid-column: span 6;}
+    .col-7 { grid-column: span 7;}
+    .col-8 { grid-column: span 8;}
+    .col-9 { grid-column: span 9;}
+    .col-10 { grid-column: span 10;}
+    .col-11 { grid-column: span 11;}
+    .col-12 { grid-column: span 12;}
+
+    .brand a{
+        font-size: 12px !important;
+    }
+    .searchbox{
+        justify-content: end !important;
+    }
+    .search_element{
+        background-color: transparent !important;
+        width: auto;
+    }
+    .search_element input{
+        display: none !important;
+    }
+    .search_btn {
+        padding: 10px !important;
+        text-indent: -9999px !important;
+        
+    }
+    .page-links{
+        padding: 0px !important;
+        padding-right: 0px !important;
+    }
+    .poster-container{
+        margin-top: 0px !important;
+    }
+    #movie-img{
+        height: 400px !important;
+    }
+    .poster-content{
+        margin-left: 20px !important;
+    }
+    #release-date{
+        margin-top: 0px !important;
+        font-size: 20px !important;
+    }
+    #movie-title{
+        font-size: 30px !important;
+    }
+    #category{
+        font-size: 20px !important;
+    }
+    #ticket-price{
+        line-height: 150% !important;
+        font-size: 16px !important;
+    }
+    #movie-description{
+        margin-right: 20px !important;
+        font-size: 14px !important;
+    }
+    .cinema-name{
+        padding: 6px !important;
+    }
+    .all-seats{
+        grid-gap: 10px !important;
+
+    }
+    .seat{
+        width: 12px !important;
+        height: 12px !important;
+
+    }
 }
