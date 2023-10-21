@@ -155,3 +155,29 @@ if (movieIdentifier) {
     // Show "Movie Not Specified" if there is no movie identifier
     document.getElementById("movie-title").textContent = "Movie Not Specified";
 }
+
+// Select the button element by its id
+const searchButton = document.getElementById("searchButton");
+
+// Add a click event listener to the button
+searchButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    // Use JavaScript to navigate to the "movie_list.html" page
+    window.location.href = "movie_list.html";
+
+});
+
+
+// Add an event listener to the "Book" button
+const bookButton = document.querySelector('button[type="button"]');
+bookButton.addEventListener("click", () => {
+    const selectedCinema = document.getElementById("choose-cinema").textContent;
+    const selectedPrice = document.getElementById("choose-price").textContent;
+
+    // Check if both cinema and price are selected
+    if (selectedCinema && selectedPrice && selectedPrice !== '$0.00') {
+        alert("Book Success");
+    } else {
+        alert("Please select a cinema and the number of tickets before booking.");
+    }
+});

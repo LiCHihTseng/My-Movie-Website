@@ -118,7 +118,7 @@ body {
 
 .cast-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));;
+    grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));;
     margin-top: 20px;
 }
 
@@ -138,6 +138,10 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));;
     margin-top: 20px;
+    
+}
+.poster-content{
+    margin-left: 20px;
 }
 .birth{
     display: flex;
@@ -221,7 +225,7 @@ body {
     flex-direction: column;
     padding:0 0 0 20px;
     text-align: left;
-    margin: 5px 0 0 120px;
+    margin: 5px 120px 0 120px;
     
     max-width: 1200px; /* Set maximum width */
     min-width: 200px;
@@ -310,22 +314,66 @@ footer{
 
 
 @media only screen and (min-width: 601px )and (max-width: 1194px) {
-    .search_element {
+    .col-md-1 { grid-column: span 1;}
+    .col-md-2 { grid-column: span 2;}
+    .col-md-3 { grid-column: span 3;}
+    .col-md-4 { grid-column: span 4;}
+    .col-md-5 { grid-column: span 5;}
+    .col-md-6 { grid-column: span 6;}
+    .col-md-7 { grid-column: span 7;}
+    .col-md-8 { grid-column: span 8;}
+    .col-md-9 { grid-column: span 9;}
+    .col-md-10 { grid-column: span 10;}
+    .col-md-11 { grid-column: span 11;}
+    .col-md-12 { grid-column: span 12;}
+    /* .search_element {
         width: 340px !important; 
     
-    }
+    } */
 
     .search_btn {
         padding: 10px 20px !important;
     }
+    .cast-description-btn {
+        margin-right: 12px !important;
+    }
+    .Bios-container h2{
+        margin-left: 12px !important;
+        
+    }
+    .cast-description{
+        margin:12px !important; 
+    }
 }
 /* Media query for screens with a maximum width of 600px (typical for mobile devices) */
 @media screen and (max-width: 600px) {
-    .search_element {
-        width: 250px !important; /* Adjust the width for smaller screens */
-    
-    }
+    .col-1 { grid-column: span 1;}
+    .col-2 { grid-column: span 2;}
+    .col-3 { grid-column: span 3;}
+    .col-4 { grid-column: span 4;}
+    .col-5 { grid-column: span 5;}
+    .col-6 { grid-column: span 6;}
+    .col-7 { grid-column: span 7;}
+    .col-8 { grid-column: span 8;}
+    .col-9 { grid-column: span 9;}
+    .col-10 { grid-column: span 10;}
+    .col-11 { grid-column: span 11;}
+    .col-12 { grid-column: span 12;}
 
+
+    .brand a{
+        font-size: 16px !important;
+    }
+    .searchbox{
+        justify-content: end !important;
+    }
+    .search_element{
+        background-color: transparent !important;
+        width: auto;
+    }
+    .search_element input{
+        display: none !important;
+    }
     .search_btn {
         padding: 10px !important;
         text-indent: -9999px !important;
@@ -334,5 +382,53 @@ footer{
     .page-links{
         padding: 0px !important;
         padding-right: 0px !important;
+    }
+    .cast-container{
+        grid-template-columns: repeat(auto-fit, minmax(18em, 1fr)) !important;
+    }
+    .cast_name{
+        font-size: 24px !important;
+    }
+    .birth{
+        font-size: 14px !important;
+    }
+    .cast_achievement p{
+        font-size: 20px !important;
+    }
+    .cast_achievement li {
+        margin-right: 12px !important;
+        font-size: 14px !important;
+    }
+    .cast-description-btn{
+        margin-right: 0px !important;
+    }
+    .cast-description-btn .buttons .font-size-btn{
+        padding: 0 10px;
+        display: inline-flex;
+        background: #ddd;
+        color: #fff;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    .cast-description-btn .buttons .font-size-btn{
+        font-size: 1em !important;
+    }
+    
+    .cast-description-btn .buttons .font-size-btn:nth-child(2){
+        font-size: 1.5em !important;
+    }
+    .cast-description-btn .buttons .font-size-btn:nth-child(3){
+        font-size: 2em !important;
+    }
+    .cast-description{
+        margin:0px !important; 
+    }
+    .cast-description p {
+        font-size: 1em !important;
+        
+    }
+    .Bios-container h2{
+        margin-left: 12px !important;
+        font-size: 24px !important;
     }
 }

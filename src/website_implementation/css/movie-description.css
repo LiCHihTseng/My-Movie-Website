@@ -236,9 +236,9 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding:0 0 0 20px;
+    padding:0 20px 0 20px;
     text-align: left;
-    margin: 5px 0 0 120px;
+    margin: 5px 120px 0 120px;
     
     max-width: 1200px; /* Set maximum width */
     min-width: 200px;
@@ -267,7 +267,7 @@ body {
     
     display: flex;
     flex-wrap: wrap;
-    gap: 2em;
+    gap: 1em;
     margin-bottom: 24px;
 }
 
@@ -299,9 +299,9 @@ body {
 .card-cast:hover #cast-name:hover:after{
     width: 100%;
 }
-/*----------------------------------------*/
 
-/*cast information part(using flexbox)*/
+
+/*set cast img and content (using flexbox)*/
 .cast-img {
     height: 100%;
 
@@ -336,6 +336,7 @@ body {
 #character-name {
     color: #444;
 }
+/*----------------------------------------*/
 
 /*comment information part(using flexbox)*/
 

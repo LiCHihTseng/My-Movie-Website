@@ -112,3 +112,13 @@ fetch(baseURL)
 
 
 
+// Select the button element by its id
+const searchButton = document.getElementById("searchButton");
+
+// Add a click event listener to the button
+searchButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    // Use JavaScript to navigate to the "movie_list.html" page
+    window.location.href = "movie_list.html";
+
+});
