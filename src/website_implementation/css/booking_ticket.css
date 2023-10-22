@@ -249,7 +249,7 @@ body {
 
 }
 .item:nth-child(3)::before{
-    background: #6D58BF;
+    background: #FF5733;
     outline: none;
 
 }
@@ -270,7 +270,7 @@ body {
     cursor: pointer;
 }
 .all-seats input:checked +label{
-    background: #6D58BF;
+    background: #FF5733;
     outline: none;
 }
 .seat.booked{
@@ -331,8 +331,8 @@ input{
     
 }
 .price button{
-    background: #6D58BF;
-    color: white;
+    background: #FF5733;
+    color: #fff;
     font-size: 14px;
     padding: 7px 14px;
     border-radius: 2mm;
@@ -349,7 +349,7 @@ input{
 
 .selected-cinema {
     color: white;
-    background-color: #6D58BF;
+    background-color: #FF5733;
 }
 
 .cinema-time{
@@ -365,7 +365,7 @@ input{
 
 .selected-time{
     color: white;
-    background-color: #6D58BF;
+    background-color: #FF5733;
 }
 
 #choose-cinema{

@@ -388,7 +388,7 @@ body {
 .form-comment{
     display: none;
     flex-wrap: wrap;
-    width: 90%;
+    width: 80%;
     margin-bottom: 20px;
 }
 
@@ -441,7 +441,7 @@ body {
 .form-comment button{
     border: 0;
     padding: 10px 30px;
-    background: #6D58BF;
+    background: #FF5733;
     font-size: 18px;
     border-radius: 5px;
     color: #fff;

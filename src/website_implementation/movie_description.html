@@ -221,8 +221,17 @@
 <script>
     translate.selectLanguageTag.show = true; //Select language for select that does not appear
     translate.ignore.class.push('brand'); //Ignore translating the brand class.
+    translate.selectLanguageTag.languages = 'english,chinese_simplified,korean,arabic,japanese,italian,spanish';
     translate.execute();
 
+    window.onload = function () {
+        translate.selectLanguageTag.show = true;
+        translate.ignore.class.push('brand');
+        translate.selectLanguageTag.languages = 'english,chinese_simplified,korean,arabic,japanese,italian,spanish';
+        translate.execute();
+
+
+    };
 </script>
 
 </html>
