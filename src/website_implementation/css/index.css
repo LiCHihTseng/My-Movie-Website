@@ -134,7 +134,7 @@ body {
 }
 
 
-/* slider --------------------------*/
+/* Image Slider reference from Youtube tutorial https://www.youtube.com/watch?v=DpHi9Ruu8R4&ab_channel=CodingWithNick*/
 .mySlides{
     overflow: hidden;
     max-height: 945px;
@@ -354,9 +354,9 @@ body {
 .card:focus {
     outline: 4px solid #6D58BF; /* Add border color, width, and style */
 }
-/*card desgin--------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------*/
 
-/*Footer--------------------------------------------------*/
+/*Footer reference from Youtube https://www.youtube.com/watch?v=zdA3qZNH1vc&pp=ygUPZm9vdGVyIGh0bWwgY3Nz*/
 footer{
     background: #6D58BF;
     height: auto;
@@ -391,6 +391,7 @@ footer{
     align-items: center;
     justify-content: center;
     margin:1rem 0 3rem 0;
+    padding-left: 0px;
 }
 
 .social li{

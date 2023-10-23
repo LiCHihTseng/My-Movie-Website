@@ -220,6 +220,7 @@ body {
     color: white;
 }
 
+/*Footer reference from Youtube https://www.youtube.com/watch?v=zdA3qZNH1vc&pp=ygUPZm9vdGVyIGh0bWwgY3Nz*/
 footer{
     background: #6D58BF;
     height: auto;
@@ -254,6 +255,7 @@ footer{
     align-items: center;
     justify-content: center;
     margin:1rem 0 3rem 0;
+    padding-left: 0px;
 }
 
 .social li{

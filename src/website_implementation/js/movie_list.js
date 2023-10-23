@@ -1,4 +1,4 @@
-// import * as translate from "./translate.js";
+
 // API base URL
 const baseURL = "https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/movies/";
 
@@ -77,6 +77,7 @@ fetch(baseURL)
             // Append the movie details div to the container
             container.appendChild(movieDetailsDiv);
         });
+        //Filter function reference comes from https://www.youtube.com/watch?v=RKfMtCNx1z0&ab_channel=CodingNepal
         const filterButtons = document.querySelectorAll(".button-value");
         const filterableCards = document.querySelectorAll("#card-container .card");
 
@@ -96,6 +97,7 @@ fetch(baseURL)
                 }
             });
         };
+        //--------------------------------------------------------------------------------------------//
 
         // Add click event listener to each filter button
         filterButtons.forEach(button => button.addEventListener("click", filterCards));

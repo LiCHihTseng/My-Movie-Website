@@ -1,3 +1,13 @@
+/*
+    I acknowledge the use of ChatGPT (https:chat.openai.com/) to [prevent appending a comment form when there are validation errors].
+    The prompts used and the response from ChatGPT are included in Appendix https://chat.openai.com/share/617e4b7d-49ab-4635-8caa-06565b8b6350.
+    The output from these prompts was to prevent appending a comment form when there are validation errors
+    This was used [if (titleMessage.length === 0 && starMessage.length === 0 && message.length === 0);], 
+    to check if there are no validation errors it will it will continue to add comments in class element "card-comment"
+*/
+
+
+
 // Get form-comment element 
 var formDiv = document.getElementById('form-comment');
 var display = 0;
@@ -77,6 +87,7 @@ if (movieIdentifier) {
     document.getElementById("movie-title").textContent = "Movie Not Specified";
 }
 
+//Click Button to Change Font-size reference from https://www.youtube.com/watch?v=xOy0kVlbhlc&pp=ygUZaW5jcmVhc2UgZm9udCBzaXplIGJ1dHRvbg%3D%3D
 let buttons = document.querySelector('.buttons');
 let btn = buttons.querySelectorAll('.font-size-btn');
 for (var i = 0; i < btn.length; i++) {
@@ -86,6 +97,8 @@ for (var i = 0; i < btn.length; i++) {
         this.className += " active";
     })
 }
+
+
 // Select all elements with the "card-cast" class
 const cardCastElements = document.querySelectorAll('.card-cast');
 
@@ -100,6 +113,7 @@ cardCastElements.forEach((card) => {
 
     });
 });
+
 // Select the button element by its id
 const searchButton = document.getElementById("searchButton");
 
@@ -163,8 +177,11 @@ document.addEventListener('keydown', function (event) {
 });
 
 //I using chatGPT to understand how to  
-//prevent appending a comment card when there are validation errors
-//comes from chatGPT https://chat.openai.com/share/4d242577-1f10-4ec3-b9b3-07599ebb60eb
+//prevent appending a comment form when there are validation errors
+//comes from chatGPT https://chat.openai.com/share/617e4b7d-49ab-4635-8caa-06565b8b6350
+
+//validation errors reference from Youtube https://www.youtube.com/watch?v=In0nB0ABaUk&pp=ygUQdmFsaWRhdGlvbiBlcnJvcg%3D%3D
+
 commentForm.addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent the default form submission behavior
     let titleMessage = []

@@ -3,6 +3,7 @@ let count = 0
 let selectedCinema; // Store the selected cinema name
 let selectedPrice;  // Store the selected ticket price
 
+//Using for loop to create buying ticket element reference from https://www.youtube.com/watch?v=zhwgLIyC97U&ab_channel=SnippetsCode
 for (var i = 0; i < 59; i++) {
     let randint = Math.floor(Math.random() * 2);
 
@@ -22,7 +23,8 @@ for (var i = 0; i < 59; i++) {
     seats.appendChild(checkbox);
     seats.appendChild(label);
 }
-
+// Add count function when the user clicks the seat it will count the ticket price 
+//reference from https://www.youtube.com/watch?v=zhwgLIyC97U&ab_channel=SnippetsCode
 let tickets = seats.querySelectorAll("input")
 tickets.forEach((ticket) => {
     ticket.addEventListener("change", () => {
@@ -48,6 +50,7 @@ tickets.forEach((ticket) => {
         document.getElementById("choose-price").textContent = `$${totalPrice.toFixed(2)}`;
     })
 })
+//----------------------------------------------------------------------------------------------------------------------------------------
 const baseURL = "https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/movies/";
 
 // Get movie identifier from the URL parameter

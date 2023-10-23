@@ -1,3 +1,4 @@
+//Click Button to Change Font-size reference from https://www.youtube.com/watch?v=xOy0kVlbhlc&pp=ygUZaW5jcmVhc2UgZm9udCBzaXplIGJ1dHRvbg%3D%3D
 let buttons = document.querySelector('.buttons');
 let btn = buttons.querySelectorAll('.font-size-btn');
 for (var i = 0; i < btn.length; i++) {
