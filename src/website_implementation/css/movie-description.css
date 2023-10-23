@@ -147,6 +147,7 @@ body {
     grid-row: 4/12 ;
     grid-column: 2/5;
     z-index: 2 ;
+    object-fit: contain;
 }
 .movie-rate{
     color: #FF5733;
