@@ -128,6 +128,7 @@ body {
     background-repeat: no-repeat;
     background-position-x: center;
     height: 450px;
+    max-width: 100vw;
 }
 .cast_name{
     font-weight: 600;

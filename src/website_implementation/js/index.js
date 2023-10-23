@@ -1,4 +1,4 @@
-
+//slider reference from Youtube https://www.youtube.com/watch?v=DpHi9Ruu8R4&t=502s&pp=ygUec2xpZGVyIGJ1dHRvbiBpbWFnZSByZXNwb25zaXZl
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -28,7 +28,7 @@ function showSlides(n) {
     dots[slideIndex - 1].classList.add("active");
 }
 
-
+//----------------------------------------------------------------------
 
 // API base URL
 const baseURL = "https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/movies/";
