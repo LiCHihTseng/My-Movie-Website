@@ -467,10 +467,17 @@ body {
 
 
 /*comment results (using flexbox)*/
-.card-comment{
+.api-comment-container{
     display: flex;
     flex-wrap: wrap;
     width: 80%;
+    justify-content: center;
+
+}
+.card-comment{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
     margin-bottom: 20px;
     background-color: #fff;
 

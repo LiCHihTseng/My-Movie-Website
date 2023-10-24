@@ -122,7 +122,7 @@ searchButton.addEventListener("click", (event) => {
     event.preventDefault();
     //Navigate to the "movie_list.html" page
     window.location.href = "movie_list.html";
-    
+
 });
 
 
@@ -169,9 +169,9 @@ document.addEventListener('keydown', function (event) {
         const focusedElement = document.activeElement;
 
         if (focusedElement.classList.contains('card-cast')) {
-            
+
             const castLink = focusedElement.getAttribute('data-cast-link');
-            window.location.href = castLink; 
+            window.location.href = castLink;
         }
     }
 });
@@ -181,12 +181,77 @@ document.addEventListener('keydown', function (event) {
 //comes from chatGPT https://chat.openai.com/share/617e4b7d-49ab-4635-8caa-06565b8b6350
 
 //validation errors reference from Youtube https://www.youtube.com/watch?v=In0nB0ABaUk&pp=ygUQdmFsaWRhdGlvbiBlcnJvcg%3D%3D
+function fetchAndDisplayComments(websiteCode) {
+    const apiEndpoint = `https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/comments/?website_code=${websiteCode}`;
 
+    // Make a GET request to the API
+    fetch(apiEndpoint, {
+        method: "GET",
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.length > 0) {
+                // Clear the existing comment placeholders
+                const commentPlaceholder = document.getElementById("api-comment-container");
+                commentPlaceholder.innerHTML = '';
+
+                // Loop through the comments and create HTML elements for each
+                data.forEach(comment => {
+                    // Create elements to display username, comment, and rating
+                    const commentCard = document.createElement('div');
+                    commentCard.classList.add('card-comment');
+
+                    const commentContent = document.createElement('div');
+                    commentContent.classList.add('card-content');
+
+                    const commentTitle = document.createElement('h2');
+                    commentTitle.textContent = comment.username;
+
+                    const commentText = document.createElement('p');
+                    commentText.textContent = comment.comment;
+
+                    const commentRating = document.createElement('div');
+                    commentRating.classList.add('card-rate');
+
+                    // Display the star rating
+                    const starIcon = document.createElement('i');
+                    starIcon.classList.add('fa-solid', 'fa-star');
+
+                    const cardRateNum = document.createElement('h1');
+                    cardRateNum.textContent = comment.rating;
+                    commentRating.appendChild(starIcon);
+                    commentRating.appendChild(cardRateNum);
+
+                    commentContent.appendChild(commentTitle);
+                    commentContent.appendChild(commentText);
+
+                    commentCard.appendChild(commentContent);
+                    commentCard.appendChild(commentRating);
+
+                    // Append the comment to the page
+                    commentPlaceholder.appendChild(commentCard);
+                });
+            } else {
+                console.error("No comment data found for the specified website code.");
+            }
+        })
+        .catch(error => {
+            console.error("Error fetching comments:", error);
+        });
+}
+
+// Call the function to fetch and display comments for a specific website_code (e.g., "example123")
+fetchAndDisplayComments("Li-Chih_Tseng");
+
+
+// Add a submit event listener to the form
 commentForm.addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent the default form submission behavior
-    let titleMessage = []
-    let starMessage = []
-    let message = []
+
+    let titleMessage = [];
+    let starMessage = [];
+    let message = [];
+
     if (commentTitleInput.value === '' || commentTitleInput.value == null) {
         titleMessage.push('Title is required');
     }
@@ -197,73 +262,90 @@ commentForm.addEventListener('submit', function (event) {
         message.push('Content is required');
     }
 
-    if (titleMessage.length > 0) {
-        errorTitle.innerText = titleMessage.join(', ');
-        commentTitleInput.style.border = '2px solid #FF0000';
-    } else {
-        errorTitle.innerText = '';
-        commentTitleInput.style.border = ''; // Reset the border
-    }
-    if (starMessage.length > 0) {
-        errorStar.innerText = starMessage.join(', ');
-    } else {
-        errorStar.innerText = '';
-    }
-    if (message.length > 0) {
-        errorComment.innerText = message.join(', ');
-        commentTextInput.style.border = '2px solid #FF0000';
-    } else {
-        errorComment.innerText = '';
-        commentTextInput.style.border = '';
-    }
+    // Display validation error messages
+    errorTitle.innerText = titleMessage.join(', ');
+    errorStar.innerText = starMessage.join(', ');
+    errorComment.innerText = message.join(', ');
 
-    // Check if there are no validation errors
     if (titleMessage.length === 0 && starMessage.length === 0 && message.length === 0) {
-        // Get the input values
+        // Extract input values
         const title = commentTitleInput.value;
         const text = commentTextInput.value;
 
-        // Create a new comment card
-        const commentCard = document.createElement('div');
-        commentCard.classList.add('card-comment');
+        // Create an object with the comment data
+        const commentData = {
+            username: title, // You can replace this with the actual username
+            comment: text,
+            website_code: "Li-Chih_Tseng", // Replace with your website code
+            rating: selectedRating
+        };
 
-        const commentContent = document.createElement('div');
-        commentContent.classList.add('card-content');
+        // Convert commentData to JSON
+        const commentDataJSON = JSON.stringify(commentData);
 
-        // Create the title and text elements for the new comment
-        const commentTitle = document.createElement('h2');
-        commentTitle.textContent = title;
-        const commentText = document.createElement('p');
-        commentText.textContent = text;
+        // Send a POST request to the API
+        fetch(`https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/comments/?website_code=${"Li-Chih"}`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: commentDataJSON
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Comment submitted successfully:", data);
 
-        // Create a new div for the rating
-        const commentRating = document.createElement('div');
-        commentRating.classList.add('card-rate');
+                // Clear the input fields and reset the selected rating
+                commentTitleInput.value = '';
+                commentTextInput.value = '';
+                selectedRating = null;
 
-        const starIcon = document.createElement('i');
-        starIcon.classList.add('fa-solid', 'fa-star');
-
-        const cardRateNum = document.createElement('h1');
-        cardRateNum.textContent = selectedRating;
-        commentRating.appendChild(starIcon);
-        commentRating.appendChild(cardRateNum);
-
-        // Append the title, text, and rating elements to the comment card
-        commentContent.appendChild(commentTitle);
-        commentContent.appendChild(commentText);
-
-        commentCard.appendChild(commentContent);
-        commentCard.appendChild(commentRating);
-
-        // Append the new comment card to the comment container
-        commentContainer.appendChild(commentCard);
-
-        // Clear the input fields and reset the selected rating
-        commentTitleInput.value = '';
-        commentTextInput.value = '';
-        selectedRating = null;
+                updateUIWithNewComment(data);
+            })
+            .catch(error => {
+                console.error("Error submitting comment:", error);
+            });
     }
 });
 
+
+function updateUIWithNewComment(newCommentData) {
+    const commentPlaceholder = document.getElementById("api-comment-container");
+    // Create a new comment card
+    const commentCard = document.createElement('div');
+    commentCard.classList.add('card-comment');
+
+    const commentContent = document.createElement('div');
+    commentContent.classList.add('card-content');
+
+    // Create the title and text elements for the new comment
+    const commentTitle = document.createElement('h2');
+    commentTitle.textContent = newCommentData.username;
+
+    const commentText = document.createElement('p');
+    commentText.textContent = newCommentData.comment;
+
+    const commentRating = document.createElement('div');
+    commentRating.classList.add('card-rate');
+
+    // Display the star rating
+    const starIcon = document.createElement('i');
+    starIcon.classList.add('fa-solid', 'fa-star');
+
+    const cardRateNum = document.createElement('h1');
+    cardRateNum.textContent = newCommentData.rating;
+    commentRating.appendChild(starIcon);
+    commentRating.appendChild(cardRateNum);
+
+    commentContent.appendChild(commentTitle);
+    commentContent.appendChild(commentText);
+
+    commentCard.appendChild(commentContent);
+    commentCard.appendChild(commentRating);
+
+    // Append the new comment card to the comment container
+
+    commentPlaceholder.appendChild(commentCard);
+}
 
 
