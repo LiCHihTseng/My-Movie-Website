@@ -237,7 +237,7 @@ function fetchAndDisplayComments(websiteCode) {
             console.error("Error fetching comments:", error);
         });
 }
-// Call the function to fetch and display comments for a specific website_code (e.g., "example123")
+// Call the function to fetch and display comments for a specific website_code.
 fetchAndDisplayComments("Li-Chih_Tseng");
 
 
@@ -309,7 +309,7 @@ commentForm.addEventListener('submit', function (event) {
     }
 });
 
-//add the function so it can auto insert below instead of refresh the page
+//add the function so comment can auto insert below instead of refresh the page
 function updateUIWithNewComment(newCommentData) {
     const commentPlaceholder = document.getElementById("api-comment-container");
     // Create a new comment card
