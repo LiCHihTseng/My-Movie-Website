@@ -1,6 +1,6 @@
 /*
     I acknowledge the use of ChatGPT (https:chat.openai.com/) to [prevent appending a comment form when there are validation errors].
-    The prompts used and the response from ChatGPT are included in Appendix https://chat.openai.com/share/617e4b7d-49ab-4635-8caa-06565b8b6350.
+    The prompts used and the response from ChatGPT are included in Appendix https://chat.openai.com/share/a080edcf-b227-428f-b5c9-f23a14b643ea.
     The output from these prompts was to prevent appending a comment form when there are validation errors
     This was used [if (titleMessage.length === 0 && starMessage.length === 0 && message.length === 0);], 
     to check if there are no validation errors it will it will continue to add comments in class element "card-comment"
@@ -176,11 +176,9 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
-//I using chatGPT to understand how to  
-//prevent appending a comment form when there are validation errors
-//comes from chatGPT https://chat.openai.com/share/617e4b7d-49ab-4635-8caa-06565b8b6350
 
-//validation errors reference from Youtube https://www.youtube.com/watch?v=In0nB0ABaUk&pp=ygUQdmFsaWRhdGlvbiBlcnJvcg%3D%3D
+
+// Function to handle form submission and send a GET request
 function fetchAndDisplayComments(websiteCode) {
     const apiEndpoint = `https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/comments/?website_code=${websiteCode}`;
 
@@ -239,11 +237,14 @@ function fetchAndDisplayComments(websiteCode) {
             console.error("Error fetching comments:", error);
         });
 }
-
 // Call the function to fetch and display comments for a specific website_code (e.g., "example123")
 fetchAndDisplayComments("Li-Chih_Tseng");
 
 
+//validation errors reference from Youtube https://www.youtube.com/watch?v=In0nB0ABaUk&pp=ygUQdmFsaWRhdGlvbiBlcnJvcg%3D%3D
+//I using chatGPT to understand how to  
+//prevent appending a comment form when there are validation errors
+//comes from chatGPT https://chat.openai.com/share/a080edcf-b227-428f-b5c9-f23a14b643ea
 // Add a submit event listener to the form
 commentForm.addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent the default form submission behavior
@@ -308,7 +309,7 @@ commentForm.addEventListener('submit', function (event) {
     }
 });
 
-
+//add the function so it can auto insert below instead of refresh the page
 function updateUIWithNewComment(newCommentData) {
     const commentPlaceholder = document.getElementById("api-comment-container");
     // Create a new comment card
