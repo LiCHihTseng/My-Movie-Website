@@ -20,7 +20,7 @@ body {
 .col-lg-10 { grid-column: span 10;}
 .col-lg-11 { grid-column: span 11;}
 .col-lg-12 { grid-column: span 12;}
-
+/*navigation*/
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -114,8 +114,9 @@ body {
     border-radius: 4px;
 }
 
+/*---------------------------------------------------------*/
 
-
+/*cast content*/
 .cast-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));;
@@ -166,7 +167,7 @@ body {
     font-size: 18px;
     line-height: 150%;
 }
-
+/*------------------------------------------------------*/
 /*Bios-container part*/
 
 /*Bios title*/

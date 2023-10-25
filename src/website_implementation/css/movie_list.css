@@ -21,6 +21,10 @@ body {
 .col-lg-11 { grid-column: span 11;}
 .col-lg-12 { grid-column: span 12;}
 
+
+
+/*navigation*/
+
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -114,8 +118,9 @@ body {
     border-radius: 4px;
 }
 
+/*----------------------------------------------------------------*/
 
-
+/*movie list*/
 .content-container{
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -195,6 +200,7 @@ body {
 .card:focus {
     outline: 4px solid #6D58BF; /* Add border color, width, and style */
 }
+/*filter part*/
 .filter{
     margin-left: 40px;
 }

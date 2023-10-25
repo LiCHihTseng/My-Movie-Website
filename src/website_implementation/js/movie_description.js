@@ -242,10 +242,9 @@ fetchAndDisplayComments("Li-Chih_Tseng");
 
 
 //validation errors reference from Youtube https://www.youtube.com/watch?v=In0nB0ABaUk&pp=ygUQdmFsaWRhdGlvbiBlcnJvcg%3D%3D
-//I using chatGPT to understand how to  
-//prevent appending a comment form when there are validation errors
+//I using chatGPT to understand how to  prevent appending a comment form when there are validation errors
 //comes from chatGPT https://chat.openai.com/share/a080edcf-b227-428f-b5c9-f23a14b643ea
-// Add a submit event listener to the form
+// Add a submit event listener to the form by using Post to API
 commentForm.addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent the default form submission behavior
 
